@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importing Toastr CSS */
+@import 'toastr/build/toastr.min.css';
+
+/* Your custom styles here */
+.custom-class {
+    /* Custom styles */
+}

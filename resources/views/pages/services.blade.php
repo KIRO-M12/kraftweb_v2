@@ -1,0 +1,1 @@
+@extends('layouts.master') @section('title', 'Services') @section('content') <!-- Services content goes here --> @endsection
