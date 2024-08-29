@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'reset')
 @section('content')
-{{-- <div class="lqd-page relative flex min-h-full flex-col">
+<div class="lqd-page relative flex min-h-full flex-col">
     <div class="lqd-page-wrapper flex grow-1">
        <div class="lqd-page-content-wrap flex grow flex-col overflow-hidden">
           <div class="lqd-page-content-container h-full px-0">
@@ -47,6 +47,6 @@
           </div>
        </div>
     </div>
- </div> --}}
+ </div>
 
 @endsection

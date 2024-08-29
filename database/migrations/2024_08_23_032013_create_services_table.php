@@ -18,12 +18,10 @@ return new class extends Migration
             $table->string('discount')->nullable(); // Store discount information
             $table->text('description')->nullable(); // Description of the service
             $table->string('icon')->nullable(); // Store path or class name for an icon
-            $table->enum('tier', ['basic', 'standard', 'premium', 'free'])->default('standard');
-            $table->boolean('is_active')->default(true); // Service status
+            $table->enum('tier', ['basic', 'standard', 'premium', 'free'])->default('standard'); // Tier level for the service
+            $table->enum('status', ['active', 'inactive'])->default('active'); // Service status changed to enum
             $table->timestamps();
         });
-
-
     }
 
     /**

@@ -386,7 +386,7 @@ h6 {
   --tw-contain-size: ;
   --tw-contain-layout: ;
   --tw-contain-paint: ;
-  --tw-contain-style: 
+  --tw-contain-style:
 }
 ::backdrop {
   --tw-border-spacing-x: 0;
@@ -439,7 +439,7 @@ h6 {
   --tw-contain-size: ;
   --tw-contain-layout: ;
   --tw-contain-paint: ;
-  --tw-contain-style: 
+  --tw-contain-style:
 }
 .container {
   width:100%;
@@ -1580,6 +1580,12 @@ h6 {
 .max-h-\[28rem\] {
   max-height:28rem
 }
+.max-h-\[34rem\] {
+    max-height:34rem
+  }
+  .max-h-\[34rem\] {
+    max-height:34rem
+  }
 .max-h-\[550px\] {
   max-height:550px
 }

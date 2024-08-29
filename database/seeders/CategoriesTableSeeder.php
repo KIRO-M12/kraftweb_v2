@@ -9,386 +9,393 @@ class CategoriesTableSeeder extends Seeder
 {
     public function run()
     {
-        // Insert categories
+        // Insert categories into 'categories' table with specific relation to main services
         DB::table('categories')->insert([
             [
-                'name' => 'E-commerce',
-                'description' => 'E-commerce related services.',
+                'name' => 'Ads',
+                'description' => 'Ads services like Google Ads, Social Media Ads, etc.',
                 'type' => 'service',
-                'tags' => json_encode(['ecommerce', 'online-store']),
-                'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Marketing',
-                'description' => 'Marketing and promotional services.',
-                'type' => 'service',
-                'tags' => json_encode(['marketing', 'advertisement']),
+                'tags' => json_encode(['ads', 'digital marketing']),
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'name' => 'SEO',
-                'description' => 'Search Engine Optimization services.',
+                'description' => 'SEO services like On-Page SEO, Link Building, etc.',
                 'type' => 'service',
-                'tags' => json_encode(['seo', 'search-engine']),
+                'tags' => json_encode(['SEO', 'search engine']),
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Social Media Management',
+                'description' => 'Managing social media channels to increase brand visibility and engagement.',
+                'type' => 'service',
+                'tags' => json_encode(['social media', 'engagement']),
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'name' => 'Design',
-                'description' => 'Web and graphic design services.',
+                'description' => 'Design services like UX/UI Design, Graphic Design, etc.',
                 'type' => 'service',
-                'tags' => json_encode(['design', 'web-design']),
+                'tags' => json_encode(['design', 'branding']),
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'name' => 'Analytics',
-                'description' => 'Data analytics and reporting services.',
+                'description' => 'Analytics services like Google Analytics, A/B Testing, etc.',
                 'type' => 'service',
-                'tags' => json_encode(['analytics', 'data']),
+                'tags' => json_encode(['data analysis', 'reporting']),
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Content Marketing',
+                'description' => 'Content marketing services focused on creating valuable content like blog writing, guest posting, etc.',
+                'type' => 'service',
+                'tags' => json_encode(['content marketing', 'digital marketing']),
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Conversion Rate Optimization (CRO)',
+                'description' => 'Services to improve the percentage of website visitors who take a desired action.',
+                'type' => 'service',
+                'tags' => json_encode(['CRO', 'conversion optimization']),
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Email Marketing',
+                'description' => 'Services to build and manage email marketing campaigns.',
+                'type' => 'service',
+                'tags' => json_encode(['email marketing', 'lead generation']),
+                'is_active' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Reports & Updates',
+                'description' => 'Reporting and updates services that provide regular insights and performance data for businesses.',
+                'type' => 'service',
+                'tags' => json_encode(['reporting', 'updates']),
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
         ]);
 
-        // Example of linking categories to service plans with additional services
+        // Insert category-service plan relationships into 'category_service_plan' table
         DB::table('category_service_plan')->insert([
-            // Linking Personalized Digital Strategies - Basic
+            // Digital Strategies - Ads Category Services (Basic)
             [
-                'category_id' => 2, // Marketing
-                'service_plan_id' => 1, // Personalized Digital Strategies - Basic
-                'services' => json_encode([
-                    'Basic SEO Optimization',
-                    'Social Media Setup',
-                    'Basic Website Audit',
-                    'Content Strategy Consultation',
-                    'Basic Competitor Analysis',
-                    'Keyword Research',
-                    'Content Calendar Creation',
-                    'Social Media Integration',
-                    'Basic CRM Setup'
-                ]),
-                'discount' => 10.00,
+                'category_id' => 1, // Ads
+                'service_plan_id' => 1, // Digital Strategies - Basic
+                'services' => json_encode(['Google Ads Setup', 'Instagram Ads Management']),
+                'discount' => 5,
                 'status' => 'active',
-                'filters' => json_encode(['Marketing']),
+                'filters' => json_encode(['ads', 'social media ads']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Personalized Digital Strategies - Standard
             [
-                'category_id' => 2, // Marketing
-                'service_plan_id' => 2, // Personalized Digital Strategies - Standard
-                'services' => json_encode([
-                    'Enhanced SEO Optimization',
-                    'Social Media Strategy and Management',
-                    'Weekly Performance Report',
-                    'In-Depth Website Audit',
-                    'Advanced Content Strategy',
-                    'Competitor Analysis',
-                    'Keyword Strategy Development',
-                    'Content Creation & Scheduling',
-                    'Social Media Advertising Strategy',
-                    'CRM Integration & Setup',
-                    'Monthly A/B Testing'
-                ]),
-                'discount' => 15.00,
+                'category_id' => 6, // Content Marketing
+                'service_plan_id' => 1, // Digital Strategies - Basic
+                'services' => json_encode(['Blog Writing', 'Content Strategy Development']),
+                'discount' => 5,
                 'status' => 'active',
-                'filters' => json_encode(['Marketing']),
+                'filters' => json_encode(['content marketing', 'SEO']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Personalized Digital Strategies - Premium
+            // Digital Strategies - Ads Category Services (Standard)
             [
-                'category_id' => 2, // Marketing
-                'service_plan_id' => 3, // Personalized Digital Strategies - Premium
-                'services' => json_encode([
-                    'Premium SEO Optimization',
-                    'Comprehensive Social Media Campaigns',
-                    'Daily Performance Reports',
-                    'Full Website Optimization',
-                    'Content Strategy & Creation',
-                    'In-Depth Competitor Analysis',
-                    'Advanced Keyword Optimization',
-                    'Omnichannel Content Distribution',
-                    'Advanced Social Media Advertising',
-                    'CRM Integration with Automation',
-                    'Real-Time A/B Testing & Optimization',
-                    'Custom Marketing Dashboard'
-                ]),
-                'discount' => 20.00,
+                'category_id' => 1, // Ads
+                'service_plan_id' => 2, // Digital Strategies - Standard
+                'services' => json_encode(['Advanced Google Ads Management', 'Facebook Ads Campaign']),
+                'discount' => 10,
                 'status' => 'active',
-                'filters' => json_encode(['Marketing']),
+                'filters' => json_encode(['ads', 'social media ads']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Data-Driven Insights - Basic
+            [
+                'category_id' => 6, // Content Marketing
+                'service_plan_id' => 2, // Digital Strategies - Standard
+                'services' => json_encode(['Guest Posting', 'Content Calendar Development']),
+                'discount' => 10,
+                'status' => 'active',
+                'filters' => json_encode(['content marketing', 'SEO']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Digital Strategies - Ads Category Services (Premium)
+            [
+                'category_id' => 1, // Ads
+                'service_plan_id' => 3, // Digital Strategies - Premium
+                'services' => json_encode(['Full Google Ads Suite Management', 'Advanced Social Media Campaigns']),
+                'discount' => 20,
+                'status' => 'active',
+                'filters' => json_encode(['ads', 'social media ads']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'category_id' => 6, // Content Marketing
+                'service_plan_id' => 3, // Digital Strategies - Premium
+                'services' => json_encode(['Comprehensive Content Marketing Strategy', 'Multi-Channel Content Distribution']),
+                'discount' => 20,
+                'status' => 'active',
+                'filters' => json_encode(['content marketing', 'SEO']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // SEO Mastery - SEO Category Services (Basic)
+            [
+                'category_id' => 2, // SEO
+                'service_plan_id' => 4, // SEO Mastery - Basic
+                'services' => json_encode(['Meta Tag Optimization', 'On-Page SEO']),
+                'discount' => 5,
+                'status' => 'active',
+                'filters' => json_encode(['SEO', 'on-page SEO']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'category_id' => 3, // Social Media Management
+                'service_plan_id' => 4, // SEO Mastery - Basic
+                'services' => json_encode(['Social Media Profile Setup', 'Content Creation and Scheduling']),
+                'discount' => 5,
+                'status' => 'active',
+                'filters' => json_encode(['social media', 'engagement']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // SEO Mastery - SEO Category Services (Standard)
+            [
+                'category_id' => 2, // SEO
+                'service_plan_id' => 5, // SEO Mastery - Standard
+                'services' => json_encode(['Technical SEO Audit', 'Competitor Analysis SEO']),
+                'discount' => 10,
+                'status' => 'active',
+                'filters' => json_encode(['SEO', 'technical SEO']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'category_id' => 3, // Social Media Management
+                'service_plan_id' => 5, // SEO Mastery - Standard
+                'services' => json_encode(['Advanced Social Media Strategy', 'Audience Engagement Tactics']),
+                'discount' => 10,
+                'status' => 'active',
+                'filters' => json_encode(['social media', 'engagement']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // SEO Mastery - SEO Category Services (Premium)
+            [
+                'category_id' => 2, // SEO
+                'service_plan_id' => 6, // SEO Mastery - Premium
+                'services' => json_encode(['Full SEO Strategy Development', 'International SEO Campaigns']),
+                'discount' => 20,
+                'status' => 'active',
+                'filters' => json_encode(['SEO', 'complete SEO']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'category_id' => 3, // Social Media Management
+                'service_plan_id' => 6, // SEO Mastery - Premium
+                'services' => json_encode(['Comprehensive Social Media Campaigns', 'Influencer Outreach and Collaboration']),
+                'discount' => 20,
+                'status' => 'active',
+                'filters' => json_encode(['social media', 'engagement']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Design Category Services (Basic)
+            [
+                'category_id' => 4, // Design
+                'service_plan_id' => 10, // Innovative Design - Basic
+                'services' => json_encode(['Basic UX/UI Design', 'Color Scheme Development']),
+                'discount' => 5,
+                'status' => 'active',
+                'filters' => json_encode(['design', 'basic UX/UI']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'category_id' => 7, // Conversion Rate Optimization (CRO)
+                'service_plan_id' => 10, // Innovative Design - Basic
+                'services' => json_encode(['A/B Testing', 'Landing Page Optimization']),
+                'discount' => 5,
+                'status' => 'active',
+                'filters' => json_encode(['CRO', 'conversion optimization']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Innovative Design - Design Category Services (Standard)
+            [
+                'category_id' => 4, // Design
+                'service_plan_id' => 11, // Innovative Design - Standard
+                'services' => json_encode(['Advanced UX/UI Design', 'Custom Graphic Design']),
+                'discount' => 10,
+                'status' => 'active',
+                'filters' => json_encode(['design', 'advanced design']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'category_id' => 7, // Conversion Rate Optimization (CRO)
+                'service_plan_id' => 11, // Innovative Design - Standard
+                'services' => json_encode(['Multivariate Testing', 'Conversion Funnel Analysis']),
+                'discount' => 10,
+                'status' => 'active',
+                'filters' => json_encode(['CRO', 'conversion optimization']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Innovative Design - Design Category Services (Premium)
+            [
+                'category_id' => 4, // Design
+                'service_plan_id' => 12, // Innovative Design - Premium
+                'services' => json_encode(['Full Branding Package', 'Advanced Animation & Video Production']),
+                'discount' => 20,
+                'status' => 'active',
+                'filters' => json_encode(['design', 'premium design']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'category_id' => 7, // Conversion Rate Optimization (CRO)
+                'service_plan_id' => 12, // Innovative Design - Premium
+                'services' => json_encode(['Full Conversion Optimization Suite', 'Heatmap and Scrollmap Analysis']),
+                'discount' => 20,
+                'status' => 'active',
+                'filters' => json_encode(['CRO', 'conversion optimization']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Data-Driven Insights - Analytics Category Services (Basic)
             [
                 'category_id' => 5, // Analytics
-                'service_plan_id' => 4, // Data-Driven Insights - Basic
-                'services' => json_encode([
-                    'Basic Visualization Tools',
-                    'Custom Report Generation',
-                    'Weekly Performance Dashboard',
-                    'Basic Google Analytics Setup',
-                    'Traffic Source Analysis',
-                    'Basic Conversion Tracking',
-                    'User Behavior Analysis',
-                    'Monthly Data Review',
-                    'Heatmap Integration',
-                    'Basic A/B Testing Insights'
-                ]),
-                'discount' => 10.00,
+                'service_plan_id' => 7, // Data-Driven Insights - Basic
+                'services' => json_encode(['Basic Google Analytics Setup', 'Weekly Performance Dashboard']),
+                'discount' => 5,
                 'status' => 'active',
-                'filters' => json_encode(['Analytics']),
+                'filters' => json_encode(['analytics', 'basic analysis']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Data-Driven Insights - Standard
+            [
+                'category_id' => 8, // Email Marketing
+                'service_plan_id' => 7, // Data-Driven Insights - Basic
+                'services' => json_encode(['Email Campaign Strategy', 'Newsletter Creation']),
+                'discount' => 5,
+                'status' => 'active',
+                'filters' => json_encode(['email marketing', 'lead generation']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Data-Driven Insights - Analytics Category Services (Standard)
             [
                 'category_id' => 5, // Analytics
-                'service_plan_id' => 5, // Data-Driven Insights - Standard
-                'services' => json_encode([
-                    'Advanced Visualization Tools',
-                    'Custom Report Scheduling',
-                    'Daily Performance Dashboard',
-                    'Advanced Google Analytics Setup',
-                    'Enhanced Traffic Source Analysis',
-                    'Conversion Funnel Analysis',
-                    'Advanced User Behavior Insights',
-                    'Weekly Data Review',
-                    'Dynamic Heatmap Integration',
-                    'Advanced A/B Testing Insights',
-                    'Customer Segmentation Analysis'
-                ]),
-                'discount' => 15.00,
+                'service_plan_id' => 8, // Data-Driven Insights - Standard
+                'services' => json_encode(['Advanced Visualization Tools', 'Custom Report Scheduling']),
+                'discount' => 10,
                 'status' => 'active',
-                'filters' => json_encode(['Analytics']),
+                'filters' => json_encode(['analytics', 'advanced analytics']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Data-Driven Insights - Premium
+            [
+                'category_id' => 8, // Email Marketing
+                'service_plan_id' => 8, // Data-Driven Insights - Standard
+                'services' => json_encode(['Automated Email Sequences', 'Lead Nurturing Campaigns']),
+                'discount' => 10,
+                'status' => 'active',
+                'filters' => json_encode(['email marketing', 'automation']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Data-Driven Insights - Analytics Category Services (Premium)
             [
                 'category_id' => 5, // Analytics
-                'service_plan_id' => 6, // Data-Driven Insights - Premium
-                'services' => json_encode([
-                    'Premium Visualization Dashboards',
-                    'Automated Report Distribution',
-                    'Real-Time Performance Dashboard',
-                    'Custom Google Analytics Integration',
-                    'Comprehensive Traffic Source Analysis',
-                    'Predictive Conversion Modeling',
-                    'Advanced User Segmentation',
-                    'Daily Data Review & Optimization',
-                    'Interactive Heatmap Tools',
-                    'Machine Learning-Based A/B Testing',
-                    'Custom Data Integration Solutions',
-                    'Enterprise-Level Data Security'
-                ]),
-                'discount' => 20.00,
+                'service_plan_id' => 9, // Data-Driven Insights - Premium
+                'services' => json_encode(['Predictive Analytics', 'Real-Time Reporting']),
+                'discount' => 20,
                 'status' => 'active',
-                'filters' => json_encode(['Analytics']),
+                'filters' => json_encode(['analytics', 'predictive analytics']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Innovative Design - Basic
             [
-                'category_id' => 4, // Design
-                'service_plan_id' => 7, // Innovative Design - Basic
-                'services' => json_encode([
-                    'Basic UX/UI Design',
-                    'Color Scheme Development',
-                    'Responsive Design',
-                    'Basic Image Editing',
-                    'Typography Selection',
-                    'Basic Branding Guidelines',
-                    'Social Media Graphics',
-                    'Basic Iconography',
-                    'Newsletter Template Design',
-                    'One-Page Website Design'
-                ]),
-                'discount' => 10.00,
+                'category_id' => 8, // Email Marketing
+                'service_plan_id' => 9, // Data-Driven Insights - Premium
+                'services' => json_encode(['Omnichannel Email Marketing', 'Advanced Email Segmentation']),
+                'discount' => 20,
                 'status' => 'active',
-                'filters' => json_encode(['Design']),
+                'filters' => json_encode(['email marketing', 'omnichannel']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Innovative Design - Standard
+            // Free Plans
             [
-                'category_id' => 4, // Design
-                'service_plan_id' => 8, // Innovative Design - Standard
-                'services' => json_encode([
-                    'Advanced UX/UI Design',
-                    'Branding Strategy Development',
-                    'Advanced Responsive Design',
-                    'High-Quality Image Editing',
-                    'Custom Typography',
-                    'Advanced Branding Guidelines',
-                    'Custom Social Media Graphics',
-                    'Custom Iconography',
-                    'Multi-Page Website Design',
-                    'Custom Newsletter Design',
-                    'Basic Animation Creation'
-                ]),
-                'discount' => 15.00,
+                'category_id' => 1, // Ads (Digital Strategies)
+                'service_plan_id' => 13, // Personalized Digital Strategies - Free
+                'services' => json_encode(['SEO Tips', 'Basic Social Media Strategies', 'Email Support', 'Monthly Updates']),
+                'discount' => 0,
                 'status' => 'active',
-                'filters' => json_encode(['Design']),
+                'filters' => json_encode(['ads', 'social media ads']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking Innovative Design - Premium
             [
-                'category_id' => 4, // Design
-                'service_plan_id' => 9, // Innovative Design - Premium
-                'services' => json_encode([
-                    'Premium UX/UI Design',
-                    'Full Branding Package',
-                    'Advanced Animation & Video Production',
-                    '3D Modeling & Rendering',
-                    'Custom Interactive Elements',
-                    'Complete Branding Guidelines',
-                    'Advanced Social Media Campaign Graphics',
-                    'Premium Iconography',
-                    'Custom Multi-Page Website Design',
-                    'High-End Newsletter Design',
-                    'Custom E-commerce Design Solutions',
-                    'Virtual Reality Interface Design'
-                ]),
-                'discount' => 20.00,
+                'category_id' => 2, // SEO (SEO Mastery)
+                'service_plan_id' => 14, // SEO Mastery - Free
+                'services' => json_encode(['SEO Checklist', 'SEO Best Practices Guide', 'Monthly Email Updates']),
+                'discount' => 0,
                 'status' => 'active',
-                'filters' => json_encode(['Design']),
+                'filters' => json_encode(['SEO', 'basic SEO insights']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking SEO Mastery - Basic
             [
-                'category_id' => 3, // SEO
-                'service_plan_id' => 10, // SEO Mastery - Basic
-                'services' => json_encode([
-                    'Keyword Research',
-                    'On-Page Optimization',
-                    'Basic Reporting',
-                    'Meta Tag Optimization',
-                    'XML Sitemap Creation',
-                    'Google My Business Setup',
-                    'Basic Local SEO',
-                    'Image Alt Text Optimization',
-                    'Basic Page Speed Optimization',
-                    'Mobile SEO Optimization',
-                    'Basic Competitor SEO Analysis',
-                    'Basic Link Building',
-                    'SEO-Friendly Content Creation'
-                ]),
-                'discount' => 10.00,
+                'category_id' => 4, // Design (Innovative Design)
+                'service_plan_id' => 15, // Innovative Design - Free
+                'services' => json_encode(['Design Tools Guide', 'Monthly Design Tips', 'Email Support']),
+                'discount' => 0,
                 'status' => 'active',
-                'filters' => json_encode(['SEO']),
+                'filters' => json_encode(['design', 'basic design services']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking SEO Mastery - Standard
             [
-                'category_id' => 3, // SEO
-                'service_plan_id' => 11, // SEO Mastery - Standard
-                'services' => json_encode([
-                    'Advanced Keyword Research',
-                    'Technical SEO Audit',
-                    'Content Optimization',
-                    'Backlink Analysis',
-                    'Competitor Analysis',
-                    'Advanced Local SEO',
-                    'Schema Markup Implementation',
-                    'Advanced Page Speed Optimization',
-                    'Content Strategy Development',
-                    'Voice Search Optimization',
-                    'Advanced Link Building',
-                    'Weekly SEO Reports',
-                    'Google Analytics & Search Console Integration',
-                    'Landing Page Optimization'
-                ]),
-                'discount' => 15.00,
+                'category_id' => 5, // Analytics (Data-Driven Insights)
+                'service_plan_id' => 16, // Data-Driven Insights - Free
+                'services' => json_encode(['Basic Reporting Templates', 'Email Support', 'Monthly Analytics Newsletter']),
+                'discount' => 0,
                 'status' => 'active',
-                'filters' => json_encode(['SEO']),
+                'filters' => json_encode(['analytics', 'basic data insights']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Linking SEO Mastery - Premium
             [
-                'category_id' => 3, // SEO
-                'service_plan_id' => 12, // SEO Mastery - Premium
-                'services' => json_encode([
-                    'Comprehensive SEO Strategy',
-                    'Full Technical SEO Audit',
-                    'Custom Content Creation',
-                    'Link Building Campaigns',
-                    'Ongoing SEO Monitoring',
-                    'International SEO Strategy',
-                    'Advanced Schema Markup',
-                    'Content Marketing Integration',
-                    'Multilingual SEO Support',
-                    'E-commerce SEO Optimization',
-                    'Advanced Voice Search Optimization',
-                    'Advanced Google Analytics Configuration',
-                    'Custom SEO Dashboard',
-                    'Enterprise-Level SEO Solutions',
-                    'AI-Powered SEO Tools Integration'
-                ]),
-                'discount' => 20.00,
+                'category_id' => 9, // Reports & Updates
+                'service_plan_id' => 16, // Data-Driven Insights - Free
+                'services' => json_encode(['Monthly Performance Reports', 'Basic Reporting Insights', 'Email Support']),
+                'discount' => 0,
                 'status' => 'active',
-                'filters' => json_encode(['SEO']),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // Linking Personalized Digital Strategies - Free
-            [
-                'category_id' => 2, // Marketing
-                'service_plan_id' => 1, // Personalized Digital Strategies - Free
-                'services' => json_encode([
-                    'Basic SEO Tips',
-                    'Content Strategy Starter Guide',
-                    'Social Media Tips for Beginners',
-                    'Monthly Email Support'
-                ]),
-                'discount' => 0.00,
-                'status' => 'active',
-                'filters' => json_encode(['Marketing']),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // Linking Innovative Design - Free
-            [
-                'category_id' => 4, // Design
-                'service_plan_id' => 2, // Innovative Design - Free
-                'services' => json_encode([
-                    'Basic UX/UI Tips',
-                    'Simple Graphic Design Tools',
-                    'Social Media Graphic Templates',
-                    'Monthly Design Tips Newsletter'
-                ]),
-                'discount' => 0.00,
-                'status' => 'active',
-                'filters' => json_encode(['Design']),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // Linking SEO Mastery - Free
-            [
-                'category_id' => 3, // SEO
-                'service_plan_id' => 3, // SEO Mastery - Free
-                'services' => json_encode([
-                    'Free SEO Tools Guide',
-                    'Monthly SEO Tips',
-                    'Basic Link Building Suggestions',
-                    'Google Analytics Setup Assistance'
-                ]),
-                'discount' => 0.00,
-                'status' => 'active',
-                'filters' => json_encode(['SEO']),
+                'filters' => json_encode(['reporting', 'monthly updates']),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
