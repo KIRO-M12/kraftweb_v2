@@ -11,8 +11,8 @@ class FooterSection extends Model
 
     protected $fillable = [
         'heading',
-        'heading_additions_1',
-        'heading_additions',
+        'additions',
+        'bold_text', // Add this line
         'description',
         'cta_text',
         'cta_link',

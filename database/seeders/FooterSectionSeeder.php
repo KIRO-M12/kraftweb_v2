@@ -12,12 +12,18 @@ class FooterSectionSeeder extends Seeder
     {
         $footerSection = FooterSection::create([
             'heading' => 'KraftWeb',
-            'heading_additions_1' => 'Invest wiser.',
-            'heading_additions' => 'Join our community today.',
+            'additions' => json_encode([
+                'Invest wiser.',
+                'Grow stronger.',
+                'Achieve success.',
+
+            ]),
+            'bold_text' => 'Join our community today.',
             'description' => 'Maximize your business potential with our tailored digital solutions.',
             'cta_text' => 'Get Started',
-            'cta_link' => 'https://example.com/join',
-            'footer_note' => '© 2024 KraftWeb. All content for demo purposes.'
+            'cta_text' => 'Get Started',
+            'cta_link' => 'https://KraftWeb.com/join',
+            'footer_note' => '© ' . now()->year . ' KraftWeb. All rights reserved.'
         ]);
 
         // Create footer links
@@ -33,3 +39,5 @@ class FooterSectionSeeder extends Seeder
         }
     }
 }
+// "Invest wiser, grow stronger, achieve success."
+// "Invest wiser, grow stronger, thrive endlessly."

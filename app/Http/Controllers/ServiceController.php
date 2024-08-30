@@ -17,9 +17,7 @@ use App\Models\ApproachHeader;
 use App\Models\FaqSection;
 use App\Models\BlogSection;
 use App\Models\BlogPost;
-use App\Models\FooterSection;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Log;
 
 class ServiceController extends Controller
 {
@@ -65,10 +63,8 @@ class ServiceController extends Controller
             $templateSection->buttons = json_decode($templateSection->buttons, true);
         }
 
-        // Deduplicate templates based on title
         $uniqueTemplates = $templates->unique('title')->map(function ($template) use ($allowedIcons) {
             $iconKey = $template->icon;
-            // Assign default icon if not found in the allowed list
             $template->icon = $allowedIcons[$iconKey] ?? 'fas fa-circle';
             return $template;
         });
@@ -77,72 +73,64 @@ class ServiceController extends Controller
     }
 
     public function getDigitalSolutionsData()
-{
-    $digitalSolutions = DigitalSolutionsSection::all(); // Fetch all data for the digital solutions
-    return $digitalSolutions;
-}
-
-public function getHubHeader()
-{
-    $hubHeader = HubHeader::first(); // Fetch the first HubHeader record
-    return $hubHeader;
-}
-
-public function getDigitalHubFeatures()
-{
-    $digitalHubFeatures = DigitalHubFeature::all(); // Fetch all DigitalHubFeature records
-    return $digitalHubFeatures;
-}
-public function getBannerData()
-{
-    $bannerSection = BannerSection::first(); // Fetch the first record
-
-    // Decode the JSON field to an array
-    if ($bannerSection && is_string($bannerSection->rotating_titles)) {
-        $bannerSection->rotating_titles = json_decode($bannerSection->rotating_titles, true);
+    {
+        return DigitalSolutionsSection::all();
     }
 
-    return $bannerSection;
-}
+    public function getHubHeader()
+    {
+        return HubHeader::first();
+    }
 
-public function getApproachData()
-{
-    $approachSections = ApproachSection::all();
-    $approachHeader = ApproachHeader::first();
+    public function getDigitalHubFeatures()
+    {
+        return DigitalHubFeature::all();
+    }
 
-    return compact('approachSections', 'approachHeader');
-}
-public function getFaqData()
-{
-    $faqSection = FaqSection::first();
-    $faqItems = $faqSection->items;
+    public function getBannerData()
+    {
+        $bannerSection = BannerSection::first();
 
-    return compact('faqSection', 'faqItems');
-}
-public function getBlogData()
-{
-    $blogSection = BlogSection::first();
-    $blogPosts = $blogSection->posts;
+        if ($bannerSection && is_string($bannerSection->rotating_titles)) {
+            $bannerSection->rotating_titles = json_decode($bannerSection->rotating_titles, true);
+        }
 
-    return compact('blogSection', 'blogPosts');
-}
+        return $bannerSection;
+    }
 
-public function getBlogPosts()
-{
-    $blogPosts = BlogPost::all();
+    public function getApproachData()
+    {
+        $approachSections = ApproachSection::all();
+        $approachHeader = ApproachHeader::first();
 
-    // Format the 'published_at' date
-    $blogPosts->transform(function ($post) {
-        $post->formatted_date = Carbon::parse($post->published_at)->format('d M');
-        return $post;
-    });
+        return compact('approachSections', 'approachHeader');
+    }
 
-    return $blogPosts;
-}
+    public function getFaqData()
+    {
+        $faqSection = FaqSection::first();
+        $faqItems = $faqSection->items;
 
-public function getFooterData()
-{
-    return FooterSection::with('links')->first();
-}
+        return compact('faqSection', 'faqItems');
+    }
 
+    public function getBlogData()
+    {
+        $blogSection = BlogSection::first();
+        $blogPosts = $blogSection->posts;
+
+        return compact('blogSection', 'blogPosts');
+    }
+
+    public function getBlogPosts()
+    {
+        $blogPosts = BlogPost::all();
+
+        $blogPosts->transform(function ($post) {
+            $post->formatted_date = Carbon::parse($post->published_at)->format('d M');
+            return $post;
+        });
+
+        return $blogPosts;
+    }
 }

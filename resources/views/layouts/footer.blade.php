@@ -120,15 +120,33 @@
     </div>
     <div class="relative">
         <div class="container mb-28">
+
             <div class="mx-auto w-1/2 text-center max-lg:w-10/12 max-sm:w-full">
                 <p class="mb-9 text-[10px] font-semibold uppercase tracking-widest">
-                    <span class="!me-2 inline-block rounded-xl bg-[#262626] px-3 py-1">
-                        {{ $footerData->heading_additions_1 }}
-                    </span>
-                    Pay once, own forever.
+                    @php
+                        // Use the additions passed from the provider
+                        $additions = $footerData->additions;
+                    @endphp
+                    @foreach ($additions as $index => $addition)
+                        @if ($index === 0)
+                            <!-- Highlight the first part -->
+                            <span class="!me-2 inline-block rounded-xl bg-[#262626] px-3 py-1">
+                                {{ explode('.', $addition)[0] }}
+                            </span>
+                            {{ explode('.', $addition)[1] ?? '' }}
+                        @else
+                            <!-- No highlight for the following parts -->
+                            {{ $addition }}
+                        @endif
+                    @endforeach
                 </p>
+
+                <p class="font-oneset -from-[5%] mb-8 bg-gradient-to-br from-transparent to-white to-50% bg-clip-text text-[100px] font-bold leading-none tracking-tight text-transparent max-sm:text-[18vw]">
+                    {{ $footerData->bold_text }}
+                 </p>
+
                 <p class="-from-[5%] mb-8 bg-gradient-to-br from-transparent to-white to-50% bg-clip-text font-heading text-[100px] font-bold leading-none tracking-tight text-transparent max-sm:text-[18vw]">
-                    {{ $footerData->heading_additions }}
+                    {{ $footerData->title }}
                 </p>
                 <p class="mb-9 px-10 font-heading text-[20px] font-normal leading-[1.25em] opacity-50">
                     {{ $footerData->description }}

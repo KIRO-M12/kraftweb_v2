@@ -37,13 +37,11 @@ class HomeController extends Controller
         $blogSection = $blogData['blogSection'];
         $blogPosts = $blogData['blogPosts'];
 
-        $footerData = $serviceController->getFooterData();
-
         return view('pages.home', compact(
             'servicePlans', 'services', 'serviceSections', 'sectionHeader',
             'templates', 'templateSection', 'digitalSolutions', 'hubHeader',
             'hubFeatures', 'bannerSection', 'approachSections', 'approachHeader',
-            'faqSection', 'faqItems', 'blogSection','blogPosts','footerData'
+            'faqSection', 'faqItems', 'blogSection','blogPosts'
         ));
     }
 
