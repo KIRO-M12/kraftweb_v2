@@ -8,25 +8,43 @@ class HomeController extends Controller
 {
     public function index(ServiceController $serviceController)
     {
-        // Fetch service plans using the ServiceController
+        // Existing code fetching service and template data
         $servicePlans = $serviceController->getServicePlans();
-
-        // Fetch all service data (services, sections, and headers) using the ServiceController
         $serviceData = $serviceController->getServiceData();
-
-        // Extract services, service sections, and section headers from the service data
         $services = $serviceData['services'];
         $serviceSections = $serviceData['serviceSections'];
         $sectionHeader = $serviceData['sectionHeader'];
-
-        // Fetch template data (templates and template section) using the ServiceController
         $templateData = $serviceController->getTemplateData();
-
-        // Extract templates and template section from the template data
-        $templates = $templateData['templates'];
+        $templates = $templateData['uniqueTemplates'];
         $templateSection = $templateData['templateSection'];
 
-        // Pass all necessary data to the view
-        return view('pages.home', compact('servicePlans', 'services', 'serviceSections', 'sectionHeader', 'templates', 'templateSection'));
+        // New code to fetch digital solutions data
+        $digitalSolutions = $serviceController->getDigitalSolutionsData();
+        $hubHeader = $serviceController->getHubHeader();
+        $hubFeatures = $serviceController->getDigitalHubFeatures();
+        $bannerSection = $serviceController->getBannerData();
+
+        // Fetch approach data
+        $approachData = $serviceController->getApproachData();
+        $approachSections = $approachData['approachSections'];
+        $approachHeader = $approachData['approachHeader'];
+
+        $faqData = $serviceController->getFaqData();
+        $faqSection = $faqData['faqSection'];
+        $faqItems = $faqData['faqItems'];
+
+        $blogData = $serviceController->getBlogData();
+        $blogSection = $blogData['blogSection'];
+        $blogPosts = $blogData['blogPosts'];
+
+        $footerData = $serviceController->getFooterData();
+
+        return view('pages.home', compact(
+            'servicePlans', 'services', 'serviceSections', 'sectionHeader',
+            'templates', 'templateSection', 'digitalSolutions', 'hubHeader',
+            'hubFeatures', 'bannerSection', 'approachSections', 'approachHeader',
+            'faqSection', 'faqItems', 'blogSection','blogPosts','footerData'
+        ));
     }
+
 }

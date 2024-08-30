@@ -9,13 +9,7 @@ class Template extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title',        // Title of the template
-        'category',     // Category to filter templates (e.g., ecommerce, blog, etc.)
-        'description',  // Description of the template
-        'icon',         // SVG icon or image URL
-        'bg_color',     // Background color for the template card
-    ];
+    protected $fillable = ['title', 'category', 'description', 'icon', 'bg_color'];
 
-    // Define any relationships here if needed in the future
+    // Add any relationships or custom methods if needed
 }

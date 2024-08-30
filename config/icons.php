@@ -2,42 +2,102 @@
 
 return [
     'allowed' => [
-        // Existing Icons
-        'testimonial' => 'fas fa-star',
-        'bookmark' => 'fas fa-bookmark',
-        'newspaper' => 'fas fa-newspaper',
-        'instagram' => 'fab fa-instagram',
-        'twitter' => 'fab fa-twitter',
-        'facebook' => 'fab fa-facebook',
-        'linkedin' => 'fab fa-linkedin',
-        'youtube' => 'fab fa-youtube',
-        'envelope' => 'fas fa-envelope',
-        'phone' => 'fas fa-phone',
+        // Solid ('fas') Icons
+        'fas fa-hand-holding-water' => 'fas fa-hand-holding-water',
+        'fas fa-magic' => 'fas fa-magic',
+        'fas fa-wizard-hat' => 'fas fa-wizard-hat',
+        'fas fa-video' => 'fas fa-video',
+        'fas fa-utensils' => 'fas fa-utensils',
+        'fas fa-user-secret' => 'fas fa-user-secret',
+        'fas fa-user' => 'fas fa-user',
+        'fas fa-tv' => 'fas fa-tv',
+        'fas fa-ticket-alt' => 'fas fa-ticket-alt',
+        'fas fa-thumbs-up' => 'fas fa-thumbs-up',
+        'fas fa-th-list' => 'fas fa-th-list',
+        'fas fa-tasks' => 'fas fa-tasks',
+        'fas fa-tags' => 'fas fa-tags',
+        'fas fa-tag' => 'fas fa-tag',
+        'fas fa-sync-alt' => 'fas fa-sync-alt',
+        'fas fa-star' => 'fas fa-star',
+        'fas fa-spell-check' => 'fas fa-spell-check',
+        'fas fa-snowflake' => 'fas fa-snowflake',
+        'fas fa-sitemap' => 'fas fa-sitemap',
+        'fas fa-search-plus' => 'fas fa-search-plus',
+        'fas fa-search' => 'fas fa-search',
+        'fas fa-rss' => 'fas fa-rss',
+        'fas fa-robot' => 'fas fa-robot',
+        'fas fa-reply' => 'fas fa-reply',
+        'fas fa-redo' => 'fas fa-redo',
+        'fas fa-quote-right' => 'fas fa-quote-right',
+        'fas fa-quote-left' => 'fas fa-quote-left',
+        'fas fa-question-circle' => 'fas fa-question-circle',
+        'fas fa-plane-departure' => 'fas fa-plane-departure',
+        'fas fa-pencil-alt' => 'fas fa-pencil-alt',
+        'fas fa-pen-nib' => 'fas fa-pen-nib',
+        'fas fa-pen' => 'fas fa-pen',
+        'fas fa-paragraph' => 'fas fa-paragraph',
+        'fas fa-paint-brush' => 'fas fa-paint-brush',
+        'fas fa-newspaper' => 'fas fa-newspaper',
+        'fas fa-music' => 'fas fa-music',
+        'fas fa-microphone-alt' => 'fas fa-microphone-alt',
+        'fas fa-microphone' => 'fas fa-microphone',
+        'fas fa-mail-bulk' => 'fas fa-mail-bulk',
+        'fas fa-list-ul' => 'fas fa-list-ul',
+        'fas fa-list' => 'fas fa-list',
+        'fas fa-lightbulb' => 'fas fa-lightbulb',
+        'fas fa-laugh' => 'fas fa-laugh',
+        'fas fa-language' => 'fas fa-language',
+        'fas fa-key' => 'fas fa-key',
+        'fas fa-info-circle' => 'fas fa-info-circle',
+        'fas fa-image' => 'fas fa-image',
+        'fas fa-home' => 'fas fa-home',
+        'fas fa-heading' => 'fas fa-heading',
+        'fas fa-handshake' => 'fas fa-handshake',
+        'fas fa-gift' => 'fas fa-gift',
+        'fas fa-file-contract' => 'fas fa-file-contract',
+        'fas fa-file-alt' => 'fas fa-file-alt',
+        'fas fa-feather-alt' => 'fas fa-feather-alt',
+        'fas fa-eye' => 'fas fa-eye',
+        'fas fa-envelope-open-text' => 'fas fa-envelope-open-text',
+        'fas fa-envelope' => 'fas fa-envelope',
+        'fas fa-edit' => 'fas fa-edit',
+        'fas fa-dumbbell' => 'fas fa-dumbbell',
+        'fas fa-copy' => 'fas fa-copy',
+        'fas fa-concierge-bell' => 'fas fa-concierge-bell',
+        'fas fa-compress-alt' => 'fas fa-compress-alt',
+        'fas fa-comments' => 'fas fa-comments',
+        'fas fa-comment-dots' => 'fas fa-comment-dots',
+        'fas fa-comment-alt' => 'fas fa-comment-alt',
+        'fas fa-code' => 'fas fa-code',
+        'fas fa-clipboard-list' => 'fas fa-clipboard-list',
+        'fas fa-clipboard' => 'fas fa-clipboard',
+        'fas fa-child' => 'fas fa-child',
+        'fas fa-check-circle' => 'fas fa-check-circle',
+        'fas fa-check' => 'fas fa-check',
+        'fas fa-chart-line' => 'fas fa-chart-line',
+        'fas fa-chalkboard-teacher' => 'fas fa-chalkboard-teacher',
+        'fas fa-calendar-alt' => 'fas fa-calendar-alt',
+        'fas fa-calculator' => 'fas fa-calculator',
+        'fas fa-bullhorn' => 'fas fa-bullhorn',
+        'fas fa-building' => 'fas fa-building',
+        'fas fa-bug' => 'fas fa-bug',
+        'fas fa-briefcase' => 'fas fa-briefcase',
+        'fas fa-brain' => 'fas fa-brain',
+        'fas fa-box' => 'fas fa-box',
+        'fas fa-bookmark' => 'fas fa-bookmark',
+        'fas fa-book-open' => 'fas fa-book-open',
+        'fas fa-book' => 'fas fa-book',
+        'fas fa-blog' => 'fas fa-blog',
+        'fas fa-balance-scale' => 'fas fa-balance-scale',
+        'fas fa-arrow-up' => 'fas fa-arrow-up',
 
-        // New Icons Added (Solid 'fas', Brand 'fab', and Regular 'far')
-        'user' => 'fas fa-user',               // Solid icon
-        'calendar' => 'fas fa-calendar',       // Solid icon
-        'chart-bar' => 'fas fa-chart-bar',     // Solid icon
-        'comments' => 'fas fa-comments',       // Solid icon
-        'file-alt' => 'fas fa-file-alt',       // Solid icon
-        'address-book' => 'fas fa-address-book',  // Solid icon
-        'lightbulb' => 'fas fa-lightbulb',     // Solid icon
-        'coffee' => 'fas fa-coffee',           // Solid icon
-        'laptop-code' => 'fas fa-laptop-code', // Solid icon
-        'globe' => 'fas fa-globe',             // Solid icon
-
-        // Regular Icons
-        'clipboard' => 'far fa-clipboard',     // Regular icon
-        'file' => 'far fa-file',               // Regular icon
-        'address-card' => 'far fa-address-card', // Regular icon
-        'smile' => 'far fa-smile',             // Regular icon
-        'calendar-alt' => 'far fa-calendar-alt', // Regular icon
-
-        // Brand Icons
-        'github' => 'fab fa-github',           // Brand icon
-        'slack' => 'fab fa-slack',             // Brand icon
-        'google' => 'fab fa-google',           // Brand icon
-        'paypal' => 'fab fa-paypal',           // Brand icon
-        'apple' => 'fab fa-apple',             // Brand icon
+        // Brand ('fab') Icons
+        'fab fa-youtube' => 'fab fa-youtube',
+        'fab fa-twitter' => 'fab fa-twitter',
+        'fab fa-tiktok' => 'fab fa-tiktok',
+        'fab fa-linkedin' => 'fab fa-linkedin',
+        'fab fa-instagram' => 'fab fa-instagram',
+        'fab fa-google' => 'fab fa-google',
+        'fab fa-facebook' => 'fab fa-facebook',
     ],
 ];

@@ -11,7 +11,8 @@ class TemplateSection extends Model
 
     protected $fillable = ['title', 'subtitle', 'description', 'buttons'];
 
+    // Define any accessors or methods as needed
     protected $casts = [
-        'buttons' => 'array', // Cast buttons as an array for easier manipulation
+        'buttons' => 'array', // Automatically cast to array
     ];
 }
