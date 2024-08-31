@@ -52,13 +52,13 @@
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/v5-font-face.min.css"> --}}
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/conflict-detection.min.js"> --}}
         @if(request()->is('*'))
-        <link href="{{ asset('libs/fonts/all.min.css') }}" rel="stylesheet"> 
-        <link href="{{ asset('libs/fonts/pro.min.js') }}" rel="stylesheet"> 
+        <link href="{{ asset('libs/fonts/all.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('libs/fonts/pro.min.js') }}" rel="stylesheet">
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> --}}
 
         <link rel="stylesheet" href="{{ asset('css/kraftweb/animation-intro.css') }}">
-        {{-- <link rel="stylesheet" href="{{ asset('libs/fslightbox/flickity.min.css') }}"> --}}
-        {{-- <link rel="stylesheet" href="{{ asset('libs/toastr/toastr.min.css') }}"> --}}
+        <link rel="stylesheet" href="{{ asset('libs/fslightbox/flickity.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('libs/toastr/toastr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('js/landing/landing-page-0b4d83ab.css') }}">
         {{-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> --}}
 

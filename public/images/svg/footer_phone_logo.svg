@@ -1,0 +1,53 @@
+         <svg width="65" height="65" viewBox="0 0 162 167" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30.3438" y="-3.3971" width="139" height="145" rx="21.5" transform="rotate(13.4991 30.3438 -3.3971)" stroke="#210D7B" stroke-opacity="0.55"/>
+            <path d="M23 56.7765L37.9736 56.7302L62.6941 100.572L62.6143 126.28L23 56.7765Z" fill="url(#paint0_linear_2_2)" fill-opacity="0.75"/>
+            <path d="M23 56.7765L37.9736 56.7302L62.6941 100.572L62.6143 126.28L23 56.7765Z" fill="url(#paint1_diamond_2_2)" fill-opacity="0.2"/>
+            <path d="M86.6982 101.867L93.5 90.8265L100.614 100.477L100.614 126.283L86.6982 101.867Z" fill="url(#paint2_linear_2_2)" fill-opacity="0.75"/>
+            <path d="M86.6982 101.867L93.5 90.8265L100.614 100.477L100.614 126.283L86.6982 101.867Z" fill="url(#paint3_diamond_2_2)" fill-opacity="0.2"/>
+            <path d="M107.936 56.7796L92.9627 56.7333L68.2422 100.575L68.322 126.283L107.936 56.7796Z" fill="url(#paint4_linear_2_2)" fill-opacity="0.75"/>
+            <path d="M107.936 56.7796L92.9627 56.7333L68.2422 100.575L68.322 126.283L107.936 56.7796Z" fill="url(#paint5_diamond_2_2)" fill-opacity="0.2"/>
+            <path d="M145.936 56.7796L130.963 56.7333L106.242 100.575L106.322 126.283L145.936 56.7796Z" fill="url(#paint6_linear_2_2)" fill-opacity="0.75"/>
+            <path d="M145.936 56.7796L130.963 56.7333L106.242 100.575L106.322 126.283L145.936 56.7796Z" fill="url(#paint7_diamond_2_2)" fill-opacity="0.2"/>
+            <defs>
+            <linearGradient id="paint0_linear_2_2" x1="28.661" y1="53.55" x2="68.2753" y2="123.053" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A12A91" stop-opacity="0.8"/>
+            <stop offset="1" stop-color="#210D7B" stop-opacity="0.55"/>
+            </linearGradient>
+            <radialGradient id="paint1_diamond_2_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.4681 88.3016) rotate(60.3184) scale(40 6.51593)">
+            <stop stop-color="#ECEAF8"/>
+            <stop offset="0.35" stop-color="#EBD7EF"/>
+            <stop offset="0.7" stop-color="#DED2E9"/>
+            <stop offset="1" stop-color="#EAEDFB"/>
+            </radialGradient>
+            <linearGradient id="paint2_linear_2_2" x1="89.1672" y1="93.296" x2="106.165" y2="123.119" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A12A91" stop-opacity="0.8"/>
+            <stop offset="1" stop-color="#210D7B" stop-opacity="0.55"/>
+            </linearGradient>
+            <radialGradient id="paint3_diamond_2_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(97.6662 108.208) rotate(60.3184) scale(17.1635 6.38921)">
+            <stop stop-color="#ECEAF8"/>
+            <stop offset="0.35" stop-color="#EBD7EF"/>
+            <stop offset="0.7" stop-color="#DED2E9"/>
+            <stop offset="1" stop-color="#EAEDFB"/>
+            </radialGradient>
+            <linearGradient id="paint4_linear_2_2" x1="102.275" y1="53.553" x2="62.661" y2="123.056" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A12A91" stop-opacity="0.8"/>
+            <stop offset="1" stop-color="#210D7B" stop-opacity="0.55"/>
+            </linearGradient>
+            <radialGradient id="paint5_diamond_2_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(82.4681 88.3047) rotate(119.682) scale(40 6.51593)">
+            <stop stop-color="#ECEAF8"/>
+            <stop offset="0.35" stop-color="#EBD7EF"/>
+            <stop offset="0.7" stop-color="#DED2E9"/>
+            <stop offset="1" stop-color="#EAEDFB"/>
+            </radialGradient>
+            <linearGradient id="paint6_linear_2_2" x1="140.275" y1="53.553" x2="100.661" y2="123.056" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A12A91" stop-opacity="0.8"/>
+            <stop offset="1" stop-color="#210D7B" stop-opacity="0.55"/>
+            </linearGradient>
+            <radialGradient id="paint7_diamond_2_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120.468 88.3047) rotate(119.682) scale(40 6.51593)">
+            <stop stop-color="#ECEAF8"/>
+            <stop offset="0.35" stop-color="#EBD7EF"/>
+            <stop offset="0.7" stop-color="#DED2E9"/>
+            <stop offset="1" stop-color="#EAEDFB"/>
+            </radialGradient>
+            </defs>
+            </svg>

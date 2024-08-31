@@ -1535,8 +1535,21 @@ h6 {
 .h-\[60px\] {
   height:60px
 }
+.h-\[65px\] {
+  height:65px
+}
+.h-\[70px\] {
+  height:70px
+}
 .h-\[71px\] {
   height:71px
+}
+[x-cloak] { 
+  display: none !important; 
+}
+
+.h-\[75px\] {
+  height:75px
 }
 .h-\[80px\] {
   height:80px
@@ -4374,7 +4387,7 @@ h6 {
 .leading-tight {
   line-height:1.25
 }
-.-tracking-tight {
+/* .-tracking-tight {
   letter-spacing:.025em
 }
 .-tracking-wide {
@@ -4394,7 +4407,7 @@ h6 {
 }
 .tracking-widest {
   letter-spacing:.1em
-}
+} */
 .text-\[\#000\] {
   --tw-text-opacity: 1;
   color:rgb(0 0 0/var(--tw-text-opacity))

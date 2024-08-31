@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
-use App\Models\FooterSection;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Blade;
+use App\Models\FooterSection;
+use App\Models\Header;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,25 +24,54 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Define a custom Blade directive for adding an 'active' class
+        Blade::directive('isActiveLink', function ($expression) {
+            return "<?php echo request()->url() === $expression ? 'active' : ''; ?>";
+        });
+
         View::composer('*', function ($view) {
-            $footerData = FooterSection::first(); // Fetch the footer data
+            // Get the current route name
+            $currentRouteName = request()->route() ? request()->route()->getName() : '';
 
-            // Check if 'additions' is a string and decode it
-            if ($footerData && is_string($footerData->additions)) {
-                $footerData->additions = json_decode($footerData->additions, true);
+            // Define the restricted route names
+            $restrictedRoutes = ['login', 'register', 'dashboard.*']; // Adjust with your actual route names
 
-                // Handle potential JSON decoding errors
-                if (json_last_error() !== JSON_ERROR_NONE) {
-                    Log::error('Failed to decode additions JSON: ' . json_last_error_msg());
-                    $footerData->additions = []; // Fallback to an empty array if JSON decoding fails
+            // Only add header and footer data if the current route is not restricted
+            if (!in_array($currentRouteName, $restrictedRoutes)) {
+                // Fetch header data
+                $headerData = Header::first();
+                if ($headerData) {
+                    // Decode nav_links and languages if they are JSON strings
+                    if (is_string($headerData->nav_links)) {
+                        $headerData->nav_links = json_decode($headerData->nav_links, true);
+                    }
+
+                    if (is_string($headerData->languages)) {
+                        $headerData->languages = json_decode($headerData->languages, true);
+                    }
                 }
-            } else if (!is_array($footerData->additions)) {
-                // If the additions field is neither a string nor an array, set it to an empty array
-                $footerData->additions = [];
-            }
 
-            // Pass the decoded and validated footer data to the views
-            $view->with('footerData', $footerData);
+                // Fetch footer data
+                $footerData = FooterSection::first();
+                if ($footerData) {
+                    // Decode 'additions' if it's a JSON string
+                    if (is_string($footerData->additions)) {
+                        $footerData->additions = json_decode($footerData->additions, true);
+
+                        // Handle potential JSON decoding errors
+                        if (json_last_error() !== JSON_ERROR_NONE) {
+                            Log::error('Failed to decode additions JSON: ' . json_last_error_msg());
+                            $footerData->additions = []; // Fallback to an empty array if JSON decoding fails
+                        }
+                    } else if (!is_array($footerData->additions)) {
+                        $footerData->additions = [];
+                    }
+                }
+
+                // Pass the decoded and validated header and footer data to the views
+                $view->with('headerData', $headerData);
+                $view->with('footerData', $footerData);
+            }
         });
     }
 }

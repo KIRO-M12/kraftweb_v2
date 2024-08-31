@@ -165,7 +165,8 @@
         <div class="container">
             <div class="flex flex-wrap items-center justify-between gap-8 pb-7 pt-10 max-sm:justify-center">
                 <a href="">
-                    <img src="{{ asset('img/logo/magicAI-logo-dark.svg') }}" alt="MagicAI logo">
+
+                    <img src="{{ asset('images/svg/footer_logo.svg') }}" alt="Kraftweb">
                 </a>
                 <ul class="flex flex-wrap items-center gap-7 text-[14px] max-sm:justify-center">
                     @foreach ($footerData->links->unique('platform') as $link)
