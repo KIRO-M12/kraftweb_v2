@@ -1,6 +1,6 @@
 @extends('layouts.master') @section('title', 'Portfolio')
 @section('content') <!-- Portfolio content goes here -->
-<section class="site-section relative flex min-h-[200px] items-center justify-center overflow-hidden bg-[#4384ea] pb-52 pt-64 text-center text-white max-md:pb-16 max-md:pt-48 lqd-is-in-view" id="banner">
+{{-- <section class="site-section relative flex min-h-[200px] items-center justify-center overflow-hidden bg-[#4384ea] pb-52 pt-64 text-center text-white max-md:pb-16 max-md:pt-48 lqd-is-in-view" id="banner">
     <div class="absolute start-0 top-0 h-full w-full overflow-hidden">
        <div class="banner-bg absolute left-0 top-0 h-full w-full"></div>
     </div>
@@ -78,6 +78,34 @@
           </div>
        </div>
     </div>
- </section>
+ </section> --}}
+ <section class="site-section" id="banner">
+    <div class="container relative">
+        <h1 class="banner-title">{{ $howItWorksSection->banner_title }}</h1>
+    </div>
+</section>
+
+<section class="page-content page-single-content">
+    <div class="container py-36">
+        <p style="text-align: center;">{{ $howItWorksSection->trusted_companies_text }}</p>
+        <table>
+            <tr>
+                @foreach($howItWorksSection->trusted_companies_logos as $logo)
+                <td><img src="{{ asset($logo) }}" alt=""></td>
+                @endforeach
+            </tr>
+        </table>
+        <p>{{ $howItWorksSection->intro_text }}</p>
+        @foreach($howItWorksSection->steps as $step)
+        <p><span>{{ $step['step_number'] }}</span></p>
+        <h4>{{ $step['title'] }}</h4>
+        <p>{{ $step['description'] }}</p>
+        @endforeach
+        <p><img src="{{ asset($howItWorksSection->image_path) }}" alt=""></p>
+        <p>{{ $howItWorksSection->additional_sections['invite_text'] }}</p>
+        <h4>{{ $howItWorksSection->additional_sections['affiliate_system'] }}</h4>
+        <p>{{ $howItWorksSection->additional_sections['affiliate_details'] }}</p>
+    </div>
+</section>
 
 @endsection

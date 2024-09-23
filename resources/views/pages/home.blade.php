@@ -368,7 +368,7 @@
  <section class="site-section pb-9 transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view" id="templates">
     <div class="container">
         <div class="rounded-[50px] border p-10 max-sm:px-5">
-            <header class="lqd-section-header mx-auto text-center w-3/5 mb-7 max-xl:w-8/12 max-lg:w-10/12 max-md:w-full">
+            <header class="lqd-section-header mx-auto text-center w-3/4 mb-14 max-xl:w-8/12 max-lg:w-10/12 max-md:w-full">
                 <h6 class="mb-6 inline-block rounded-md bg-[#083D91] bg-opacity-15 px-3 py-1 text-[13px] font-medium text-[#083D91]">
                     {{ $templateSection->subtitle }}
                     <span class="dot"></span>
@@ -419,12 +419,12 @@
         </div>
     </div>
 </section>
-<section class="site-section py-10 transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view">
+{{-- <section class="site-section py-10 transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view">
     <div class="container">
        <div class="rounded-[50px] border p-10 max-sm:px-6 max-sm:py-16">
          <header class="lqd-section-header mx-auto text-center w-3/4 mb-14 max-xl:w-8/12 max-lg:w-10/12 max-md:w-full">
-             <h2 class="lqd-section-header-title mb-[0.45em]">Empower Your Business with Strategic Digital Solutions</h2>
-             <p class="lqd-section-header-desc text-[18px] leading-[1.444em]">Leverage our expertise in custom-built websites, data-driven analytics, and innovative tools to drive growth and achieve your unique business goals.</p>
+             <h2 class="lqd-section-header-title mb-[0.45em]">Craft Unique Websites</h2>
+             <p class="lqd-section-header-desc text-[18px] leading-[1.444em]">Shape your digital presence with custom-built solutions using Laravel, WordPress, and PHP.</p>
          </header>
 
           <div class="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -443,7 +443,32 @@
           </div>
        </div>
     </div>
- </section>
+ </section> --}}
+ <section class="site-section py-10 transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view">
+    <div class="container">
+        <div class="rounded-[50px] border p-10 max-sm:px-6 max-sm:py-16">
+            <header class="lqd-section-header mx-auto text-center w-3/4 mb-14 max-xl:w-8/12 max-lg:w-10/12 max-md:w-full">
+                <h2 class="lqd-section-header-title mb-[0.45em]">{{ $digitalSolutionsData['header']->header_title }}</h2>
+                <p class="lqd-section-header-desc text-[18px] leading-[1.444em]">{{ $digitalSolutionsData['header']->header_description }}</p>
+            </header>
+
+            <div class="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
+                @foreach ($digitalSolutionsData['solutions'] as $solution)
+                <div class="group px-8 pb-12 bg-[#F5F5F7] rounded-[40px] text-center overflow-hidden transition-all hover:-translate-y-2 hover:shadow-lg">
+                    <figure class="group-hover:scale-105 relative z-0 inline-block transition-all duration-300">
+                        <img class="-mx-8 max-w-[calc(100%+4rem)]" src="{{ asset($solution->image_path) }}" alt="{{ $solution->title }}" width="696" height="426">
+                    </figure>
+                    <div class="relative shrink">
+                        <h4 class="mb-3 font-bold">{{ $solution->title }}</h4>
+                        <p class="text-[14px]">{{ $solution->description }}</p>
+                        <a href="#learn-more" class="text-blue-600 hover:underline text-[14px] font-semibold">Learn More</a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section>
 
 
 {{-- <section class="site-section py-10 transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view" id="how-it-works">
@@ -479,7 +504,10 @@
              @foreach ($approachSections as $index => $section)
                 <div class="group mx-auto flex max-w-[270px] flex-col items-center text-center text-[18px] font-medium">
                    <span class="size-16 mb-10 grid place-content-center rounded-full border-[2px] border-[#A2B2C9] border-opacity-15 text-[26px] font-medium transition-all group-hover:-translate-y-2 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black">{{ $index + 1 }}</span>
-                   <p><strong>{{ $section->title }}</strong>: {{ $section->description }}</p>
+                   <strong>{{ $section->title }}</strong>
+                   <p>
+                       {{ $section->description }}
+                    </p>
                 </div>
              @endforeach
           </div>

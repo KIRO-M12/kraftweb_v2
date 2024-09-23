@@ -35,7 +35,8 @@ class AppServiceProvider extends ServiceProvider
 
             // Define the restricted route names
             $restrictedRoutes = ['login', 'register', 'dashboard.*']; // Adjust with your actual route names
-
+            // Define the routes where 'lqd-is-sticky' should be added by default
+            $stickyRoutes = ['about', 'contact']; // Add more routes as needed
             // Only add header and footer data if the current route is not restricted
             if (!in_array($currentRouteName, $restrictedRoutes)) {
                 // Fetch header data
@@ -68,6 +69,10 @@ class AppServiceProvider extends ServiceProvider
                     }
                 }
 
+                // Check if the current route is in the stickyRoutes array
+                $isSticky = in_array($currentRouteName, $stickyRoutes);
+                // Pass the sticky class to all views
+                $view->with('isSticky', $isSticky);
                 // Pass the decoded and validated header and footer data to the views
                 $view->with('headerData', $headerData);
                 $view->with('footerData', $footerData);

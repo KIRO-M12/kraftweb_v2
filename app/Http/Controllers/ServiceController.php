@@ -17,6 +17,7 @@ use App\Models\ApproachHeader;
 use App\Models\FaqSection;
 use App\Models\BlogSection;
 use App\Models\BlogPost;
+use App\Models\DigitalSolutionsHeader;
 use Carbon\Carbon;
 
 class ServiceController extends Controller
@@ -74,7 +75,16 @@ class ServiceController extends Controller
 
     public function getDigitalSolutionsData()
     {
-        return DigitalSolutionsSection::all();
+        // Retrieve the first header entry
+        $header = DigitalSolutionsHeader::first();
+
+        // Retrieve all digital solutions
+        $solutions = DigitalSolutionsSection::all();
+
+        return [
+            'header' => $header,
+            'solutions' => $solutions
+        ];
     }
 
     public function getHubHeader()

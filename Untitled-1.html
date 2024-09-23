@@ -1,0 +1,485 @@
+<section class="site-section transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view">
+   <div class="container">
+      <div class="rounded-[50px] border p-20 max-xl:px-10 max-lg:py-12 max-sm:px-5">
+         <div class="lqd-tabs" data-lqd-tabs-style="1">
+            <!-- Tabs Triggers -->
+            <div class="lqd-tabs-triggers mb-9 grid grid-cols-5 justify-between gap-8 max-lg:grid-cols-3 max-lg:gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
+               @foreach ($services as $service)
+                   <button class="transition-all p-7 text-[1.25rem] text-center border rounded-xl font-heading font-medium hover:text-heading-foreground [&.lqd-is-active]:bg-white [&.lqd-is-active]:text-heading-foreground [&.lqd-is-active]:border-white [&.lqd-is-active]:shadow-lg {{ $loop->first ? 'lqd-is-active' : '' }}" data-target="#{{ Str::slug($service->name, '-') }}">
+                       {{ $service->name }}
+                   </button>
+               @endforeach
+            </div>
+
+            <!-- Tabs Content -->
+            <div class="lqd-tabs-content-wrap">
+               @foreach ($services as $service)
+               <div class="lqd-tabs-content {{ !$loop->first ? 'hidden' : '' }}" id="{{ Str::slug($service->name, '-') }}">
+                  <div class="flex flex-wrap justify-between max-md:gap-4">
+                     <!-- First Column -->
+                     <div class="flex w-[47%] flex-col items-start rounded-xl p-8 shadow-lg max-md:w-full">
+                        <h6 class="mb-10 rounded-xl bg-[#F3E5F5] px-3 py-1"> {{ $service->header }} <span class="dot"></span> <span class="opacity-50">{{ $service->subheader }}</span> </h6>
+                        <h3 class="mb-7 mt-auto">{{ $service->title }}</h3>
+                        <p class="text-lg leading-[25px] [&_strong]:font-semibold [&_strong]:text-black">{{ $service->description }}</p>
+                     </div>
+
+                     <!-- Second Column -->
+                     <div class="group w-[47%] rounded-xl p-8 max-md:w-full" style="background-color: {{ $service->background_color }};">
+                        <div class="text-center">
+                           <figure class="mb-6 w-full">
+                               <img class="w-full rounded-2xl shadow-[0px_3px_45px_rgba(0,0,0,0.07)] transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-[1.025] group-hover:shadow-[0px_20px_65px_rgba(0,0,0,0.05)]" width="878" height="748" src="{{ asset('images/upload/images/frontent/services/' . $service->image) }}" alt="{{ $service->name }}">
+                           </figure>
+                           <p class="text-lg font-semibold text-heading-foreground">{{ $service->cta_title }}</p>
+                           <p class="text-[12px] text-heading-foreground">{{ $service->cta_subtitle }}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               @endforeach
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+#ab7fe6
+#57cbc6
+#7f8fe6
+#82b97e
+
+<section class="site-section py-20 transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view">
+   <div class="container">
+      <header class="lqd-section-header mx-auto text-center w-3/5 mb-14 max-xl:w-8/12 max-lg:w-10/12 max-md:w-full">
+         <h2 class="lqd-section-header-title mb-[0.45em]">Website Solutions for Every Need</h2>
+         <p class="lqd-section-header-desc text-[18px] leading-[1.444em]">Explore our range of services tailored to different professions and business needs. From website creation to digital marketing, we help you build an online presence that stands out.</p>
+      </header>
+      <div class="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
+         <div class="lqd-color-box flex items-center py-5 px-9 gap-4 rounded-[15px] transition-all hover:shadow-lg hover:-translate-y-2 text-[#AB7FE6] bg-[#AB7FE6] bg-opacity-[0.07] hover:shadow-[#ab7fe621]">
+            <span class="lqd-box-dot w-6 h-6 border border-[8px] border-white rounded-full shadow-lg !bg-current"></span>
+            <h3 class="text-xl text-inherit -tracking-tight">For E-Commerce Startups</h3>
+            <p class="mt-2 text-[14px] text-gray-700">Build a robust online store with seamless checkout experiences and powerful inventory management tools tailored for e-commerce startups.</p>
+         </div>
+         <div class="lqd-color-box flex items-center py-5 px-9 gap-4 rounded-[15px] transition-all hover:shadow-lg hover:-translate-y-2 text-[#57CBC6] bg-[#57CBC6] bg-opacity-[0.07] hover:shadow-[#57cbc624]">
+            <span class="lqd-box-dot w-6 h-6 border border-[8px] border-white rounded-full shadow-lg !bg-current"></span>
+            <h3 class="text-xl text-inherit -tracking-tight">For Freelancers</h3>
+            <p class="mt-2 text-[14px] text-gray-700">Create a stunning personal portfolio website with easy-to-use templates that showcase your skills, projects, and client testimonials.</p>
+         </div>
+         <div class="lqd-color-box flex items-center py-5 px-9 gap-4 rounded-[15px] transition-all hover:shadow-lg hover:-translate-y-2 text-[#7F8FE6] bg-[#7F8FE6] bg-opacity-[0.07] hover:shadow-[#7f8fe624]">
+            <span class="lqd-box-dot w-6 h-6 border border-[8px] border-white rounded-full shadow-lg !bg-current"></span>
+            <h3 class="text-xl text-inherit -tracking-tight">For Small Businesses</h3>
+            <p class="mt-2 text-[14px] text-gray-700">Get a professional business website that boosts your brand and allows you to connect with your customers seamlessly.</p>
+         </div>
+         <div class="lqd-color-box flex items-center py-5 px-9 gap-4 rounded-[15px] transition-all hover:shadow-lg hover:-translate-y-2 text-[#6BAC65] bg-[#6BAC65] bg-opacity-[0.07] hover:shadow-[#6bac6524]">
+            <span class="lqd-box-dot w-6 h-6 border border-[8px] border-white rounded-full shadow-lg !bg-current"></span>
+            <h3 class="text-xl text-inherit -tracking-tight">For Bloggers</h3>
+            <p class="mt-2 text-[14px] text-gray-700">Start a blog that attracts readers with beautiful layouts and intuitive editing tools. Grow your audience and monetize your content with ease.</p>
+         </div>
+         <div class="lqd-color-box flex items-center py-5 px-9 gap-4 rounded-[15px] transition-all hover:shadow-lg hover:-translate-y-2 text-[#EF793A] bg-[#EF793A] bg-opacity-[0.07] hover:shadow-[#ef793a1f]">
+            <span class="lqd-box-dot w-6 h-6 border border-[8px] border-white rounded-full shadow-lg !bg-current"></span>
+            <h3 class="text-xl text-inherit -tracking-tight">For Digital Marketers</h3>
+            <p class="mt-2 text-[14px] text-gray-700">Leverage SEO tools, social media integrations, and marketing analytics to drive traffic and increase conversions on your websites.</p>
+         </div>
+         <div class="lqd-color-box flex items-center py-5 px-9 gap-4 rounded-[15px] transition-all hover:shadow-lg hover:-translate-y-2 text-[#CBA153] bg-[#CBA153] bg-opacity-[0.07] hover:shadow-[#cba15326]">
+            <span class="lqd-box-dot w-6 h-6 border border-[8px] border-white rounded-full shadow-lg !bg-current"></span>
+            <h3 class="text-xl text-inherit -tracking-tight">For Creative Professionals</h3>
+            <p class="mt-2 text-[14px] text-gray-700">Design your portfolio or business website with advanced customization options that reflect your creative vision and style.</p>
+         </div>
+      </div>
+   </div>
+</section>
+text-[#CBA153] bg-[#CBA153] bg-opacity-[0.07] hover:shadow-[#cba15326]
+text-[#AB7FE6] bg-[#AB7FE6] bg-opacity-[0.07] hover:shadow-[#ab7fe621]
+text-[#57CBC6] bg-[#57CBC6] bg-opacity-[0.07] hover:shadow-[#57cbc624]
+text-[#7F8FE6] bg-[#7F8FE6] bg-opacity-[0.07] hover:shadow-[#7f8fe624]
+text-[#6BAC65] bg-[#6BAC65] bg-opacity-[0.07] hover:shadow-[#6bac6524]
+text-[#EF793A] bg-[#EF793A] bg-opacity-[0.07] hover:shadow-[#ef793a1f]
+
+<!--  -->
+<section class="site-section pb-9 transition-all duration-700 md:translate-y-8 md:opacity-0 [&amp;.lqd-is-in-view]:translate-y-0 [&amp;.lqd-is-in-view]:opacity-100 lqd-is-in-view" id="templates">
+   <div class="container">
+      <div class="rounded-[50px] border p-10 max-sm:px-5">
+         <header class="lqd-section-header mx-auto text-center w-3/5 mb-7 max-xl:w-8/12 max-lg:w-10/12 max-md:w-full">
+            <h6 class="mb-6 inline-block rounded-md bg-[#083D91] bg-opacity-15 px-3 py-1 text-[13px] font-medium text-[#083D91]">
+               Custom
+               <span class="dot"></span>
+               <span class="opacity-50">Prompts</span>
+            </h6>
+            <h2 class="lqd-section-header-title mb-[0.45em]">Custom Templates.</h2>
+            <p class="lqd-section-header-desc text-[18px] leading-[1.444em]"></p>
+         </header>
+         <div class="flex flex-col items-center">
+            <div class="mx-auto mb-10 inline-flex flex-wrap items-center gap-2 rounded-lg border p-[0.35rem] text-[12px] font-semibold leading-none max-md:justify-center">
+               <button class="transition-all px-4 py-2 rounded-lg hover:text-heading-foreground [&amp;.lqd-is-active]:text-heading-foreground [&amp;.lqd-is-active]:bg-white [&amp;.lqd-is-active]:shadow-xl lqd-is-active" data-target=".templates-all">
+               All
+               </button>
+            </div>
+         </div>
+         <div class="relative">
+            <div class="templates-cards grid max-h-[28rem] grid-cols-3 gap-4 overflow-hidden max-lg:grid-cols-2 max-md:grid-cols-1" style="overflow: visible;">
+               <div class="group p-7 bg-[#F5F5F7] rounded-2xl templates-all templates-ecommerce">
+                  <figure class="mix-blend-multiply group-hover:scale-125 relative z-0 inline-block transition-all duration-300">
+                     <span class="size-11 mb-4 inline-flex items-center justify-center rounded-lg bg-gradient-to-bl from-[#f0f0f2] to-[#d7d7d9] [&amp;_path]:fill-inherit [&amp;_svg]:h-5 [&amp;_svg]:w-6 [&amp;_svg]:fill-[#7c7c7e]">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                           <path d="M319 806h322v-60H319v60Zm0-170h322v-60H319v60Zm-99 340q-24 0-42-18t-18-42V236q0-24 18-42t42-18h361l219 219v521q0 24-18 42t-42 18H220Zm331-554h189L551 236v186Z"></path>
+                        </svg>
+                     </span>
+                  </figure>
+                  <div class="relative shrink">
+                     <h4 class="mb-3 font-semibold font-body">
+                        Product Description
+                     </h4>
+                     <p class="text-[14px]">Easily create compelling product descriptions that sell. Increase conversions and boost sales.</p>
+                  </div>
+               </div>
+               <div class="group p-7 bg-[#F5F5F7] rounded-2xl templates-all templates-blog">
+                  <figure class="mix-blend-multiply group-hover:scale-125 relative z-0 inline-block transition-all duration-300">
+                     <span class="size-11 mb-4 inline-flex items-center justify-center rounded-lg bg-gradient-to-bl from-[#f0f0f2] to-[#d7d7d9] [&amp;_path]:fill-inherit [&amp;_svg]:h-5 [&amp;_svg]:w-6 [&amp;_svg]:fill-[#7c7c7e]">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                           <path d="M140 936q-24.75 0-42.375-17.625T80 876V216l67 67 66-67 67 67 67-67 66 67 67-67 67 67 66-67 67 67 67-67 66 67 67-67v660q0 24.75-17.625 42.375T820 936H140Zm0-60h310V596H140v280Zm370 0h310V766H510v110Zm0-170h310V596H510v110ZM140 536h680V416H140v120Z"></path>
+                        </svg>
+                     </span>
+                  </figure>
+                  <div class="relative shrink">
+                     <h4 class="mb-3 font-semibold font-body">
+                        Article Generator
+                     </h4>
+                     <p class="text-[14px]">Instantly create unique articles on any topic. Boost engagement, improve SEO, and save time.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="templates-cards-overlay absolute inset-x-0 bottom-0 z-10 h-[230px] bg-gradient-to-t from-background from-20% to-transparent" style="visibility: hidden;"></div>
+         </div>
+         <div class="relative z-20 mt-2 text-center">
+            <button class="templates-show-more text-[14px] font-semibold text-[#5A4791]" style="visibility: hidden;">
+               <span class="size-7 mr-1 inline-grid place-content-center rounded-lg bg-[#885EFE] bg-opacity-10">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M5.671 11.796V0.996H7.125V11.796H5.671ZM0.998 7.125V5.671H11.798V7.125H0.998Z"></path>
+                  </svg>
+               </span>
+               <span class="inline-grid h-7 place-content-center rounded-lg bg-[#885EFE] bg-opacity-10 px-2">
+               Show more
+               </span>
+            </button>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="site-section relative flex min-h-screen items-center justify-center overflow-hidden py-52 text-center text-white max-md:pb-16 max-md:pt-48 lqd-is-in-view" id="banner">
+   <div class="absolute start-0 top-0 h-full w-full transform-gpu overflow-hidden [backface-visibility:hidden]">
+      <div class="banner-bg absolute left-0 top-0 h-full w-full"></div>
+   </div>
+   <div class="container relative">
+      <div class="mx-auto flex w-2/3 flex-col items-center max-lg:w-2/4 max-md:w-full">
+         <h6 class="relative mb-8 translate-y-6 overflow-hidden rounded-2xl bg-white bg-opacity-15 px-3 py-1 text-white opacity-0 blur-lg transition-all ease-out group-[.page-loaded]/body:translate-y-0 group-[.page-loaded]/body:opacity-100 group-[.page-loaded]/body:blur-0">
+            <div class="banner-subtitle-gradient absolute -inset-3 blur-3xl transition-all duration-500 group-[.page-loaded]/body:opacity-0">
+               <div class="animate-hue-rotate absolute inset-0 bg-gradient-to-br from-violet-600 to-red-500"></div>
+            </div>
+            <span class="relative">{{ $bannerSection->tag_title }} <!--here should be Empower Your --></span>
+            <span class="dot relative"></span>
+            <span class="relative opacity-60">{{ $bannerSection->tag_subtitle }}</span>
+         </h6>
+         <div class="text-container">
+            <h1 class="banner-title mb-7 translate-y-7 font-body leading-tight font-bold -tracking-wide text-white opacity-0 transition-all ease-out group-[.page-loaded]/body:translate-y-0 group-[.page-loaded]/body:opacity-100">
+               {{ $bannerSection->main_title }}
+               <svg class="lqd-split-text-words inline transition-all duration-[2850ms] lightning-svg" width="47" height="62" viewBox="0 0 47 62" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                     <linearGradient id="border-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#8a85ff; stop-opacity:1" />
+                        <!-- Soft lavender -->
+                        <stop offset="100%" style="stop-color:#d4c7ff; stop-opacity:1" />
+                        <!-- Pale violet -->
+                     </linearGradient>
+                  </defs>
+                  <path d="M27.95 0L0 38.213H18.633V61.141L46.583 22.928H27.95V0Z" fill="none" stroke="url(#border-gradient)" />
+               </svg>
+               <span class="lqd-text-rotator inline-grid grid-cols-1 grid-rows-1 justify-center items-center whitespace-nowrap transition-[width] duration-200">
+               @foreach ($bannerSection->rotating_titles as $title)
+               <span class="lqd-text-rotator-item col-start-1 row-start-1 inline-flex translate-x-3 opacity-0 blur-sm transition-all duration-300 [&amp;.lqd-is-active]:translate-x-0 [&amp;.lqd-is-active]:opacity-100 [&amp;.lqd-is-active]:blur-0">
+                  <span>{{ $title }}</span>
+               </span>
+               @endforeach
+            </h1>
+         </div>
+         <p class="mb-7 w-3/4 text-[20px] leading-[1.25em] text-fuchsia-700 opacity-75 max-sm:w-full [&amp;_.lqd-split-text-words]:translate-y-3 [&amp;_.lqd-split-text-words]:opacity-0 [&amp;_.lqd-split-text-words]:transition-all [&amp;_.lqd-split-text-words]:ease-out group-[.page-loaded]/body:[&amp;_.lqd-split-text-words]:translate-y-0 group-[.page-loaded]/body:[&amp;_.lqd-split-text-words]:text-white group-[.page-loaded]/body:[&amp;_.lqd-split-text-words]:opacity-100">
+            <span class="inline-flex lqd-split-text-words [background:inherit]" style="transition-delay:0.15s">
+               {{ $bannerSection->description }}
+            </span>
+         </p>
+         <div class="translate-y-3 opacity-0 transition-all delay-[450ms] group-[.page-loaded]/body:translate-y-0 group-[.page-loaded]/body:opacity-100">
+            <a class="inline-flex w-full items-center justify-center bg-black bg-opacity-10 px-4 py-3 text-lg font-semibold text-white transition-all duration-300 hover:bg-opacity-20" data-fslightbox="video-gallery" style="border-radius: 3rem;" href="{{ $bannerSection->video_url }}">
+               <svg class="icon icon-tabler icon-tabler-player-play-filled me-4 bg-white" style="padding: 13px; border-radius: 2rem;" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="#37393d"></path>
+               </svg>
+               {{ $bannerSection->tag_1 }}
+            </a>
+         </div>
+         <br>
+         <div class="translate-y-3 opacity-0 transition-all delay-[500ms] group-[.page-loaded]/body:translate-y-0 group-[.page-loaded]/body:opacity-100">
+            <a class="opacity-50 transition-opacity hover:opacity-100" href="#features">Learn More About Our Services</a>
+         </div>
+      </div>
+   </div>
+   <div class="banner-divider absolute inset-x-0 -bottom-[2px]">
+      <svg class="h-auto w-full fill-background" width="1440" height="105" viewBox="0 0 1440 105" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+         <path d="M0 0C240 68.7147 480 103.072 720 103.072C960 103.072 1200 68.7147 1440 0V104.113H0V0Z"></path>
+      </svg>
+   </div>
+</section>
+
+<section class="site-section py-10 transition-all duration-700 md:translate-y-8 md:opacity-0 [&.lqd-is-in-view]:translate-y-0 [&.lqd-is-in-view]:opacity-100 lqd-is-in-view" id="faq">
+   <div class="container">
+      <div class="relative rounded-[50px] border p-11 pb-16 max-sm:px-5">
+         <header class="lqd-section-header mx-auto text-center w-2/4 mb-9 max-xl:w-8/12 max-lg:w-10/12 max-md:w-full">
+            <h6 class="mb-6 inline-block rounded-md bg-[#60027C] bg-opacity-15 px-3 py-1 text-[13px] font-medium text-[#60027C]">
+               {{ $faqSection->header }}
+               <span class="dot"></span>
+               <span class="opacity-50">{{ $faqSection->sub_header }}</span>
+            </h6>
+            <h2 class="lqd-section-header-title mb-[0.45em]">{{ $faqSection->title }}</h2>
+            <p class="lqd-section-header-desc text-[18px] leading-[1.444em]">{{ $faqSection->description }}</p>
+         </header>
+         <div class="lqd-accordion mx-auto w-5/6 max-lg:w-full">
+            @foreach ($faqItems as $item)
+            <div class="lqd-accordion-item group">
+               <button data-target="#faq-{{ $item->id }}" data-trigger-type="accordion" class="flex items-center justify-between w-full py-5 pl-4 text-heading-foreground text-left text-[20px] font-normal tracking-wide border-b group/btn group-last:border-b-0">
+                  <span>{{ $item->question }}</span>
+                  <div class="inline-flex items-center justify-center ml-3 border w-7 h-7 rounded-3xl shrink-0">
+                     <span class="group-[&.lqd-is-active]/btn:hidden">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M6.552 6.489H11.617V5.061H6.552V0H5.082V5.061H5.96046e-08V6.489H5.082V11.571H6.552V6.489Z"></path>
+                        </svg>
+                     </span>
+                     <span class="hidden group-[&.lqd-is-active]/btn:block">
+                        <svg width="7" height="2" viewBox="0 0 7 2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0 1.764C0.633344 1.67982 1.27225 1.64472 1.911 1.659H4.411C5.05675 1.64347 5.70273 1.67858 6.343 1.764V0C5.70266 0.0844217 5.05663 0.11786 4.411 0.0999999H1.911C1.27236 0.117286 0.63335 0.083848 0 0V1.764Z"></path>
+                        </svg>
+                     </span>
+                  </div>
+               </button>
+               <div id="faq-{{ $item->id }}" class="hidden">
+                  <div class="py-4 pl-3 lqd-accordion-content">
+                     <p class="text-lg max-sm:text-[17px]">{{ $item->answer }}</p>
+                  </div>
+               </div>
+            </div>
+            @endforeach
+         </div>
+      </div>
+   </div>
+</section>
+
+<footer class="site-footer relative bg-black pb-11 pt-40 text-white">
+   <div class="absolute inset-0" style="background: radial-gradient(circle at 0% -20%, #a12a91, rgba(33, 13, 123, 0.83), transparent, transparent, transparent)"></div>
+   <div class="absolute inset-x-0 -top-px">
+      <svg class="w-full fill-background" preserveAspectRatio="none" width="1440" height="86" viewBox="0 0 1440 86" xmlns="http://www.w3.org/2000/svg">
+         <path d="M0 85.662C240 29.1253 480 0.857 720 0.857C960 0.857 1200 29.1253 1440 85.662V0H0V85.662Z"></path>
+      </svg>
+   </div>
+   <div class="relative">
+      <div class="container mb-28">
+         <div class="mx-auto w-1/2 text-center max-lg:w-10/12 max-sm:w-full">
+            <p class="mb-9 text-[10px] font-semibold uppercase tracking-widest">
+               <span class="!me-2 inline-block rounded-xl bg-[#262626] px-3 py-1">
+                  {{ $footerData->heading }}
+               </span>
+               Pay once, own forever.
+            </p>
+            <p class="-from-[5%] mb-8 bg-gradient-to-br from-transparent to-white to-50% bg-clip-text font-heading text-[100px] font-bold leading-none tracking-tight text-transparent max-sm:text-[18vw]">
+               Start your free trial.
+            </p>
+            <p class="mb-9 px-10 font-heading text-[20px] font-normal leading-[1.25em] opacity-50">
+               {{ $footerData->description }}
+            </p>
+            <a class="relative inline-flex items-center overflow-hidden rounded-xl border-[2px] border-white border-opacity-0 bg-white/10 px-7 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:border-white hover:bg-white hover:bg-opacity-100 hover:text-black hover:shadow-lg" href="{{ $footerData->cta_link }}" target="_blank">
+               {{ $footerData->cta_text }}
+               <span class="relative z-10 ms-2 inline-flex items-center">
+                  <svg width="11" height="14" viewBox="0 0 47 62" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M27.95 0L0 38.213H18.633V61.141L46.583 22.928H27.95V0Z"></path>
+                  </svg>
+               </span>
+            </a>
+         </div>
+      </div>
+      <hr class="border-white border-opacity-15">
+      <div class="container">
+         <div class="flex flex-wrap items-center justify-between gap-8 pb-7 pt-10 max-sm:justify-center">
+            <a href="">
+            <img src="{{ asset('img/logo/magicAI-logo-dark.svg') }}" alt="MagicAI logo">
+            </a>
+            <ul class="flex flex-wrap items-center gap-7 text-[14px] max-sm:justify-center">
+               <li>
+                  <a class="inline-flex items-center gap-2" href="{{ $link->link }}">
+                     <span class="w-3.5 [&amp;_svg]:h-auto [&amp;_svg]:w-full">
+                        <svg width="50" height="52" viewBox="0 0 50 52" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M42.4358 43.9153H35.1192V32.1428C35.1192 29.3353 35.0705 25.7228 31.3137 25.7228C27.5033 25.7228 26.9193 28.7803 26.9193 31.9403V43.9153H19.6051V19.7053H26.6297V23.0128H26.7271C28.1602 20.4978 30.8221 18.9953 33.6568 19.1028C41.0732 19.1028 42.4383 24.1153 42.4383 30.6328L42.4358 43.9153ZM11.3492 16.3953C9.00359 16.3953 7.10326 14.4428 7.10326 12.0328C7.10326 9.62284 9.00359 7.67034 11.3492 7.67034C13.6948 7.67034 15.5951 9.62284 15.5951 12.0328C15.5951 14.4428 13.6948 16.3953 11.3492 16.3953ZM15.0063 43.9153H7.68236V19.7053H15.0063V43.9153ZM46.0832 0.690341H4.00579C2.01786 0.667841 0.387613 2.30534 0.363281 4.34784V47.7578C0.387613 49.8028 2.01786 51.4403 4.00579 51.4178H46.0832C48.076 51.4428 49.7136 49.8053 49.7403 47.7578V4.34534C49.7111 2.29784 48.0736 0.660341 46.0832 0.687841"></path>
+                        </svg>
+                     </span>
+                     {{ $link->platform }}
+                  </a>
+               </li>
+            </ul>
+            <ul class="flex flex-wrap items-center gap-7 text-[14px] max-sm:justify-center"></ul>
+         </div>
+         <hr class="border-white border-opacity-15">
+         <div class="flex flex-wrap items-center justify-center gap-4 py-9 max-sm:text-center">
+            <p class="!text-end text-[14px] opacity-60" >
+               2024 MagicAI. All images are for demo purposes.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+
+<footer class="site-footer relative bg-black pb-11 pt-40 text-white">
+   <div class="absolute inset-0" style="background: radial-gradient(circle at 0% -20%, #a12a91, rgba(33, 13, 123, 0.83), transparent, transparent, transparent)"></div>
+   <div class="absolute inset-x-0 -top-px">
+       <svg class="w-full fill-background" preserveAspectRatio="none" width="1440" height="86" viewBox="0 0 1440 86" xmlns="http://www.w3.org/2000/svg">
+           <path d="M0 85.662C240 29.1253 480 0.857 720 0.857C960 0.857 1200 29.1253 1440 85.662V0H0V85.662Z"></path>
+       </svg>
+   </div>
+   <div class="relative">
+       <div class="container mb-28">
+           <div class="mx-auto w-1/2 text-center max-lg:w-10/12 max-sm:w-full">
+               @foreach ($footerData->additions as $addition)
+               <p class="mb-9 text-[10px] font-semibold uppercase tracking-widest">
+                   <span class="!me-2 inline-block rounded-xl bg-[#262626] px-3 py-1">
+                       {{ explode('.', $addition)[0] }} <!-- Extract the first part -->
+                   </span>
+                   {{ explode('.', $addition)[1] ?? '' }} <!-- Extract the second part if available -->
+               </p>
+               @endforeach
+               <p class="-from-[5%] mb-8 bg-gradient-to-br from-transparent to-white to-50% bg-clip-text font-heading text-[100px] font-bold leading-none tracking-tight text-transparent max-sm:text-[18vw]">
+                   {{ $footerData->title }}
+               </p>
+               <p class="mb-9 px-10 font-heading text-[20px] font-normal leading-[1.25em] opacity-50">
+                   {{ $footerData->description }}
+               </p>
+               <a class="relative inline-flex items-center overflow-hidden rounded-xl border-[2px] border-white border-opacity-0 bg-white/10 px-7 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:border-white hover:bg-white hover:bg-opacity-100 hover:text-black hover:shadow-lg" href="{{ $footerData->cta_link }}" target="_blank">
+                   {{ $footerData->cta_text }}
+                   <span class="relative z-10 ms-2 inline-flex items-center">
+                       <svg width="11" height="14" viewBox="0 0 47 62" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M27.95 0L0 38.213H18.633V61.141L46.583 22.928H27.95V0Z"></path>
+                       </svg>
+                   </span>
+               </a>
+           </div>
+       </div>
+       <hr class="border-white border-opacity-15">
+       <div class="container">
+           <div class="flex flex-wrap items-center justify-between gap-8 pb-7 pt-10 max-sm:justify-center">
+               <a href="">
+                   <img src="{{ asset('img/logo/magicAI-logo-dark.svg') }}" alt="MagicAI logo">
+               </a>
+               <ul class="flex flex-wrap items-center gap-7 text-[14px] max-sm:justify-center">
+                   @foreach ($footerData->links->unique('platform') as $link)
+                   <li>
+                       <a class="inline-flex items-center gap-2" href="{{ $link->link }}">
+                           <span class="w-3.5 [&amp;_svg]:h-auto [&amp;_svg]:w-full">
+                               <svg width="50" height="52" viewBox="0 0 50 52" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M42.4358 43.9153H35.1192V32.1428C35.1192 29.3353 35.0705 25.7228 31.3137 25.7228C27.5033 25.7228 26.9193 28.7803 26.9193 31.9403V43.9153H19.6051V19.7053H26.6297V23.0128H26.7271C28.1602 20.4978 30.8221 18.9953 33.6568 19.1028C41.0732 19.1028 42.4383 24.1153 42.4383 30.6328L42.4358 43.9153ZM11.3492 16.3953C9.00359 16.3953 7.10326 14.4428 7.10326 12.0328C7.10326 9.62284 9.00359 7.67034 11.3492 7.67034C13.6948 7.67034 15.5951 9.62284 15.5951 12.0328C15.5951 14.4428 13.6948 16.3953 11.3492 16.3953ZM15.0063 43.9153H7.68236V19.7053H15.0063V43.9153ZM46.0832 0.690341H4.00579C2.01786 0.667841 0.387613 2.30534 0.363281 4.34784V47.7578C0.387613 49.8028 2.01786 51.4403 4.00579 51.4178H46.0832C48.076 51.4428 49.7136 49.8053 49.7403 47.7578V4.34534C49.7111 2.29784 48.0736 0.660341 46.0832 0.687841"></path>
+                               </svg>
+                           </span>
+                           {{ $link->platform }}
+                       </a>
+                   </li>
+                   @endforeach
+               </ul>
+           </div>
+           <hr class="border-white border-opacity-15">
+           <div class="flex flex-wrap items-center justify-center gap-4 py-9 max-sm:text-center">
+               <p class="!text-end text-[14px] opacity-60">
+                   {{ now()->year }} Kraft-Web. All rights reserved.
+               </p>
+           </div>
+       </div>
+   </div>
+</footer>
+<header class="site-header group/header absolute inset-x-0 top-0 z-50 text-white transition-[background,shadow] [&amp;.lqd-is-sticky]:text-black"
+x-data="{ navOffsetTop: $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10), isSticky: false }"
+x-init="window.scrollY > navOffsetTop &amp;&amp; (isSticky = true)"
+@resize.window.debounce.500ms="navOffsetTop = $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10)"
+@scroll.window="window.scrollY > navOffsetTop ? (isSticky = true) : (isSticky = false)"
+:class="{ 'lqd-is-sticky': isSticky }">
+
+<nav class="site-header-nav relative flex items-center justify-between border-b border-white/10 px-7 py-4 h-[75px] text-xs opacity-0 transition-all duration-500 group-[.lqd-is-sticky]/header:fixed group-[.lqd-is-sticky]/header:top-0 group-[.lqd-is-sticky]/header:w-full group-[.lqd-is-sticky]/header:border-black group-[.lqd-is-sticky]/header:border-opacity-5 group-[&amp;.lqd-is-sticky]/header:bg-white group-[.page-loaded]/body:opacity-100 group-[&amp;.lqd-is-sticky]/header:shadow-[0_4px_20px_rgba(0,0,0,0.03)] max-sm:px-2" id="frontend-local-navbar" x-ref="navbar">
+
+<a class="site-logo relative basis-1/3 max-lg:basis-1/3" href="" x-data="{ isMobile: window.innerWidth < 640 }" @resize.window="isMobile = window.innerWidth < 640">
+    <!-- Desktop Logo -->
+    <img x-show="!isMobile" x-cloak class="absolute start-0 top-1/2 -translate-y-1/2 translate-x-3 opacity-0 transition-all group-[.lqd-is-sticky]/header:translate-x-0 group-[.lqd-is-sticky]/header:opacity-100" src="{{ asset($headerData->desktop_logo) }}" alt="Kraftweb">
+    <img x-show="isMobile" x-cloak class="absolute start-0 top-1/2 -translate-y-1/2 translate-x-3 opacity-0 transition-all group-[.lqd-is-sticky]/header:translate-x-0 group-[.lqd-is-sticky]/header:opacity-100" src="{{ asset($headerData->mobile_logo) }}" alt="Kraftweb Mobile">
+</a>
+
+<!-- Navigation Links -->
+<ul>
+@foreach ($headerData->nav_links as $link)
+ <li><a href="{{ $link['url'] }}" class="...">{{ $link['title'] }}</a></li>
+@endforeach
+
+</ul>
+
+<!-- Language Options -->
+<div>
+ @foreach ($headerData->languages as $language)
+ <a href="{{ $language['url'] }}" class="...">{{ $language['name'] }}</a>
+@endforeach
+</div>
+
+<!-- Sign In and Join Links -->
+<a href="{{ $headerData->sign_in_link }}" class="...">Sign In</a>
+<a href="{{ $headerData->join_link }}" class="...">Join Hub</a>
+
+<!-- Promo Video -->
+<a href="{{ $headerData->promo_video_link }}" class="...">See it in action</a>
+</nav>
+</header>
+
+<section class="page-content page-single-content">
+   <div class="container py-36">
+      <div class="row">
+         <div class="mx-auto w-full lg:w-10/12 xl:w-8/12">
+            <p><img style="display: block; border-radius: 25px; margin-left: auto; margin-right: auto;" src="{{ asset($aboutSection->main_image) }}" alt="" width="1450" height="761"></p>
+            <p style="text-align: center;"><span class="highlight">{{ $aboutSection->highlighted_text_poster }}</span></p>
+            <h1 style="text-align: center;">{{ $aboutSection->main_title }}</h1>
+            <p class="leading" style="max-width: 80%; margin-left: auto; margin-right: auto; text-align: center;">{{ $aboutSection->content_part_most_highlight[1] }}<span style="color: rgb(89, 89, 89);">content_part_less_highlight[1]</span></p>
+
+            <hr>
+            <p>&nbsp;</p>
+            @foreach($aboutSection->additional_highlights as $highlight)
+            <p><span class="highlight">{{ $tag_highlight }}</span></p>
+            <h3>{{ $aboutSection->poster_title }}</h3>
+            <p class="leading">{{ $aboutSection->poster_title_most_highlight }}<span style="color: rgb(89, 89, 89);"> {{ $aboutSection->poster_title_less_highlight }}</span></p>
+                  @foreach($aboutSection-> as $poster)
+                     <p>{{ $poster->poster_text }}</p>
+                  @endforeach
+            @endforeach
+            <p>&nbsp;</p>
+            <p style="text-align: center;">
+               <span class="info-box"> Still have a question?
+                  <span style="color: rgb(8, 53, 248);">
+                     <a style="color: rgb(8, 53, 248);" href="#">Browse documentation</a>
+                  </span> or
+                  <span style="color: rgb(8, 53, 248);">
+                     <a style="color: rgb(8, 53, 248);" href="#">submit a ticket</a>
+                  </span>.
+               </span>
+            </p>
+            <p>&nbsp;</p>
+            <hr>
+            <p>&nbsp;</p>
+            <table style="border-collapse: collapse; width: 100%; border-width: 0px; border-style: none;" border="1">
+               foreach ($aboutSection->icons as $icon)
+               <colgroup>
+                  <col style="width: 20%;">
+               </colgroup>
+               <tbody>
+                  <tr style="text-align: center;">
+                     <td style="border-width: 0px; text-align: center;"><img src="{{ asset($icon) }}" alt="" width="auto" height="auto"></td>
+                  </tr>
+               </tbody>
+               @endforeach
+            </table>
+         </div>
+      </div>
+   </div>
+</section>

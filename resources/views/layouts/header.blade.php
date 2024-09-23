@@ -1,28 +1,28 @@
 {{-- <header class="site-header group/header absolute inset-x-0 top-0 z-50 text-white transition-[background,shadow] [&amp;.lqd-is-sticky]:text-black" x-data="{ navOffsetTop: $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10), isSticky: false }" x-init="window.scrollY > navOffsetTop &amp;&amp; (isSticky = true)" @resize.window.debounce.500ms="navOffsetTop = $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10)" @scroll.window="window.scrollY > navOffsetTop ? (isSticky = true) : (isSticky = false)" :class="{ 'lqd-is-sticky': isSticky }">
    <nav class="site-header-nav relative flex items-center justify-between border-b border-white/10 px-7 py-4 h-[75px] text-xs opacity-0 transition-all duration-500 group-[.lqd-is-sticky]/header:fixed group-[.lqd-is-sticky]/header:top-0 group-[.lqd-is-sticky]/header:w-full group-[.lqd-is-sticky]/header:border-black group-[.lqd-is-sticky]/header:border-opacity-5 group-[&amp;.lqd-is-sticky]/header:bg-white group-[.page-loaded]/body:opacity-100 group-[&amp;.lqd-is-sticky]/header:shadow-[0_4px_20px_rgba(0,0,0,0.03)] max-sm:px-2" id="frontend-local-navbar" x-ref="navbar">
-      <a class="site-logo relative basis-1/3 max-lg:basis-1/3" href="" 
-      x-data="{ isMobile: window.innerWidth < 640 }" 
+      <a class="site-logo relative basis-1/3 max-lg:basis-1/3" href=""
+      x-data="{ isMobile: window.innerWidth < 640 }"
       @resize.window="isMobile = window.innerWidth < 640">
-      
+
        <!-- Desktop Logo -->
        <img x-show="!isMobile" x-cloak
             class="absolute start-0 top-1/2 -translate-y-1/2 translate-x-3 opacity-0 transition-all group-[.lqd-is-sticky]/header:translate-x-0 group-[.lqd-is-sticky]/header:opacity-100"
             src="{{ asset('images/svg/header_logo.svg') }}" alt="Kraftweb">
-   
+
        <img x-show="!isMobile" x-cloak
             class="transition-all group-[.lqd-is-sticky]/header:peer-first:translate-x-2 group-[.lqd-is-sticky]/header:peer-first:opacity-0"
             src="{{ asset('images/svg/footer_logo.svg') }}" alt="kraftweb">
-   
+
        <!-- Mobile Logo -->
        <img x-show="isMobile" x-cloak
        class="transition-all group-[.lqd-is-sticky]/header:peer-first:translate-x-2 group-[.lqd-is-sticky]/header:peer-first:opacity-0"
        src="{{ asset('images/svg/header_phone_logo.svg') }}" alt="kraftweb Mobile">
-       
+
        <img x-show="isMobile" x-cloak
             class="absolute start-0 top-1/2 -translate-y-1/2 translate-x-3 opacity-0 transition-all group-[.lqd-is-sticky]/header:translate-x-0 group-[.lqd-is-sticky]/header:opacity-100"
             src="{{ asset('images/svg/footer_phone_logo.svg') }}" alt="Kraftweb Mobile">
    </a>
-   
+
       <div class="site-nav-container basis-1/3 transition-all max-lg:absolute max-lg:right-0 max-lg:top-full max-lg:max-h-0 max-lg:w-full max-lg:overflow-hidden max-lg:bg-[#343C57] max-lg:text-white [&amp;.lqd-is-active]:max-lg:max-h-[calc(100vh-150px)]">
          <div class="max-lg:max-h-[inherit] max-lg:overflow-y-scroll">
             <ul class="flex items-center justify-center gap-14 whitespace-nowrap text-center max-xl:gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-5 max-lg:p-10">
@@ -132,45 +132,65 @@
    </div>
 </header>
   --}}
-  
-<header class="site-header group/header absolute inset-x-0 top-0 z-50 text-white transition-[background,shadow] [&amp;.lqd-is-sticky]:text-black" x-data="{ navOffsetTop: $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10), isSticky: false }" x-init="window.scrollY > navOffsetTop &amp;&amp; (isSticky = true)" @resize.window.debounce.500ms="navOffsetTop = $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10)" @scroll.window="window.scrollY > navOffsetTop ? (isSticky = true) : (isSticky = false)" :class="{ 'lqd-is-sticky': isSticky }">
+
+  <header class="site-header group/header absolute inset-x-0 top-0 z-50 text-white transition-[background,shadow] [&.lqd-is-sticky]:text-black"
+  x-data="{
+      navOffsetTop: $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10),
+      isSticky: {{ $isSticky ? 'true' : 'false' }}
+  }"
+  x-init="window.addEventListener('scroll', () => {
+              if (window.scrollY > navOffsetTop) {
+                  isSticky = true;
+                  $el.classList.add('lqd-is-sticky');
+              } else {
+                  isSticky = {{ $isSticky ? 'true' : 'false' }};
+                  if (!isSticky) {
+                      $el.classList.remove('lqd-is-sticky');
+                  }
+              }
+          });
+          if (isSticky) {
+              $el.classList.add('lqd-is-sticky');
+          }"
+  @resize.window.debounce.500ms="navOffsetTop = $refs.navbar.offsetTop - parseInt(getComputedStyle($refs.navbar).marginTop, 10)">
+  <!-- Header content... -->
    <nav class="site-header-nav relative flex items-center justify-between border-b border-white/10 px-7 py-4 h-[75px] text-xs opacity-0 transition-all duration-500 group-[.lqd-is-sticky]/header:fixed group-[.lqd-is-sticky]/header:top-0 group-[.lqd-is-sticky]/header:w-full group-[.lqd-is-sticky]/header:border-black group-[.lqd-is-sticky]/header:border-opacity-5 group-[&amp;.lqd-is-sticky]/header:bg-white group-[.page-loaded]/body:opacity-100 group-[&amp;.lqd-is-sticky]/header:shadow-[0_4px_20px_rgba(0,0,0,0.03)] max-sm:px-2" id="frontend-local-navbar" x-ref="navbar">
-      <a class="site-logo relative basis-1/3 max-lg:basis-1/3" href="" 
-      x-data="{ isMobile: window.innerWidth < 640 }" 
+      <a class="site-logo relative basis-1/3 max-lg:basis-1/3" href=""
+      x-data="{ isMobile: window.innerWidth < 640 }"
       @resize.window="isMobile = window.innerWidth < 640">
-      
+
        <!-- Desktop Logo -->
        <img x-show="!isMobile" x-cloak
             class="absolute start-0 top-1/2 -translate-y-1/2 translate-x-3 opacity-0 transition-all group-[.lqd-is-sticky]/header:translate-x-0 group-[.lqd-is-sticky]/header:opacity-100"
             src="{{ asset('images/svg/header_logo.svg') }}" alt="Kraftweb">
-   
+
        <img x-show="!isMobile" x-cloak
             class="transition-all group-[.lqd-is-sticky]/header:peer-first:translate-x-2 group-[.lqd-is-sticky]/header:peer-first:opacity-0"
             src="{{ asset('images/svg/footer_logo.svg') }}" alt="kraftweb">
-   
+
        <!-- Mobile Logo -->
        <img x-show="isMobile" x-cloak
        class="transition-all group-[.lqd-is-sticky]/header:peer-first:translate-x-2 group-[.lqd-is-sticky]/header:peer-first:opacity-0"
        src="{{ asset('images/svg/header_phone_logo.svg') }}" alt="kraftweb Mobile">
-       
+
        <img x-show="isMobile" x-cloak
             class="absolute start-0 top-1/2 -translate-y-1/2 translate-x-3 opacity-0 transition-all group-[.lqd-is-sticky]/header:translate-x-0 group-[.lqd-is-sticky]/header:opacity-100"
             src="{{ asset('images/svg/footer_phone_logo.svg') }}" alt="Kraftweb Mobile">
     </a>
-   
+
       <div class="site-nav-container basis-1/3 transition-all max-lg:absolute max-lg:right-0 max-lg:top-full max-lg:max-h-0 max-lg:w-full max-lg:overflow-hidden max-lg:bg-[#343C57] max-lg:text-white [&amp;.lqd-is-active]:max-lg:max-h-[calc(100vh-150px)]">
          <div class="max-lg:max-h-[inherit] max-lg:overflow-y-scroll">
             <ul class="flex items-center justify-center gap-14 whitespace-nowrap text-center max-xl:gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-5 max-lg:p-10">
                @foreach ($headerData->nav_links as $link)
                <li>
-                   <a href="{{ $link['url'] }}" target="_self" 
-                      class="relative before:absolute before:-inset-x-4 before:-inset-y-2 before:scale-75 before:rounded-lg before:bg-current before:opacity-0 before:transition-all hover:before:scale-100 hover:before:opacity-10 [&.active]:before:scale-100 [&.active]:before:opacity-10 
+                   <a href="{{ $link['url'] }}" target="_self"
+                      class="relative before:absolute before:-inset-x-4 before:-inset-y-2 before:scale-75 before:rounded-lg before:bg-current before:opacity-0 before:transition-all hover:before:scale-100 hover:before:opacity-10 [&.active]:before:scale-100 [&.active]:before:opacity-10
                       {{ (request()->is('/') && $link['title'] === 'Home') || request()->is(trim(parse_url($link['url'], PHP_URL_PATH), '/')) ? 'active' : '' }}">
                        {{ $link['title'] }}
                    </a>
                </li>
                @endforeach
-               
+
             </ul>
             <div class="group relative -mt-3 block border-t border-white/5 px-10 pb-5 pt-6 md:hidden">
                <p class="mb-3 flex items-center gap-2">
@@ -185,15 +205,15 @@
                </p>
                @foreach ($headerData->nav_links as $link)
                <li>
-                   <a href="{{ $link['url'] }}" target="_self" 
+                   <a href="{{ $link['url'] }}" target="_self"
                       class="relative before:absolute before:-inset-x-4 before:-inset-y-2 before:scale-75 before:rounded-lg before:bg-current before:opacity-0 before:transition-all hover:before:scale-100 hover:before:opacity-10 [&.active]:before:scale-100 [&.active]:before:opacity-10 {{ request()->url() === $link['url'] ? 'active' : '' }}">
                        {{ $link['title'] }}
                    </a>
                </li>
                @endforeach
-               
-               
-               
+
+
+
             </div>
          </div>
       </div>
@@ -213,7 +233,7 @@
                <a class="block border-b border-black border-opacity-5 px-3 py-3 transition-colors last:border-none hover:bg-black hover:bg-opacity-5" href="{{ $language['url'] }}" rel="alternate" hreflang="{{ $language['code'] }}">
                   {{ $language['name'] }}
                </a>
-               @endforeach  
+               @endforeach
             </div>
          </div>
          <a class="relative inline-flex items-center overflow-hidden rounded-lg border-[2px] border-white !border-opacity-10 px-4 py-2 font-medium text-white transition-all duration-300 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-lg group-[.lqd-is-sticky]/header:border-black group-[.lqd-is-sticky]/header:text-black group-[.lqd-is-sticky]/header:hover:text-white" href="{{ $headerData->sign_in_link }}">
@@ -242,4 +262,3 @@
       </a>
    </div>
 </header>
- 

@@ -5,5 +5,4 @@
 <script src="{{ asset('js/frontend/frontend-animations.js') }}"></script>
 <script src="{{ asset('libs/fslightboxs/fslightbox.js') }}"></script>
 <script src="{{ asset('libs/toastr/toatr.min.js') }}"></script>
-<script src="{{ asset('libs/alpinejs/cdn.min.js') }}" defer></script>
-
+<script src="{{ asset('libs/alpinejs/cdn.min.js') }}" defer></script> 

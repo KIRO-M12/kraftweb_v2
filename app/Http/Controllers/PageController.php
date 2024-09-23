@@ -9,11 +9,6 @@ use App\Http\Controllers\BlogController;
 
 class PageController extends Controller
 {
- 
-    public function about()
-    {
-        return view('pages.about');
-    }
 
     public function contact()
     {
@@ -40,8 +35,8 @@ class PageController extends Controller
         return view('pages.portfolio');
     }
 
-    public function howItWorks()
-    {
-        return view('pages.how-it-works');
-    }
+    // public function howItWorks()
+    // {
+    //     return view('pages.how-it-works');
+    // }
 }

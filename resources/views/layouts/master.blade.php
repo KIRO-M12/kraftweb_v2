@@ -56,6 +56,11 @@
         <link href="{{ asset('libs/fonts/pro.min.js') }}" rel="stylesheet">
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> --}}
 
+
+        {{-- <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script> --}}
+        {{-- <div contenteditable="true" id="editable-content">{{ $pageContent }}</div> --}}
+        {{-- <button onclick="saveChanges()">Save Changes</button> --}}
+
         <link rel="stylesheet" href="{{ asset('css/kraftweb/animation-intro.css') }}">
         <link rel="stylesheet" href="{{ asset('libs/fslightbox/flickity.min.css') }}">
         <link rel="stylesheet" href="{{ asset('libs/toastr/toastr.min.css') }}">

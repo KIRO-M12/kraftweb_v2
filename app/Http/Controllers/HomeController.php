@@ -19,7 +19,7 @@ class HomeController extends Controller
         $templateSection = $templateData['templateSection'];
 
         // New code to fetch digital solutions data
-        $digitalSolutions = $serviceController->getDigitalSolutionsData();
+        $digitalSolutionsData = $serviceController->getDigitalSolutionsData();
         $hubHeader = $serviceController->getHubHeader();
         $hubFeatures = $serviceController->getDigitalHubFeatures();
         $bannerSection = $serviceController->getBannerData();
@@ -39,10 +39,9 @@ class HomeController extends Controller
 
         return view('pages.home', compact(
             'servicePlans', 'services', 'serviceSections', 'sectionHeader',
-            'templates', 'templateSection', 'digitalSolutions', 'hubHeader',
+            'templates', 'templateSection', 'digitalSolutionsData', 'hubHeader',
             'hubFeatures', 'bannerSection', 'approachSections', 'approachHeader',
             'faqSection', 'faqItems', 'blogSection','blogPosts'
         ));
-    }
-
+    } 
 }

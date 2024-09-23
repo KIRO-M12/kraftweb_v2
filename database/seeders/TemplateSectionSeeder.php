@@ -11,9 +11,9 @@ class TemplateSectionSeeder extends Seeder
     {
         DB::table('template_sections')->insert([
             [
-                'title' => 'Craft Unique Websites',
-                'subtitle' => 'Custom-built Solutions',
-                'description' => 'Shape your digital presence with custom-built solutions using Laravel, WordPress, and PHP.',
+                'title' => 'Empower Your Business with Strategic Digital Solutions',
+                'subtitle' => 'Custom-built',
+                'description' => 'Leverage our expertise in custom-built websites, data-driven analytics, and innovative tools to drive growth and achieve your unique business goals.',
                 'buttons' => json_encode([
                     ['label' => 'All', 'target' => '.templates-all'],
                     ['label' => 'Blog', 'target' => '.templates-blog'],

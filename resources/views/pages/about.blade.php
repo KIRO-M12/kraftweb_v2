@@ -1,6 +1,6 @@
 @extends('layouts.master') @section('title', 'About Us')
 @section('content')
-<section class="page-content page-single-content">
+{{-- <section class="page-content page-single-content">
     <div class="container py-36">
        <div class="row">
           <div class="mx-auto w-full lg:w-10/12 xl:w-8/12">
@@ -50,6 +50,76 @@
           </div>
        </div>
     </div>
+ </section> --}}
+ <section class="page-content page-single-content">
+    <div class="container py-36">
+       <div class="row">
+          <div class="mx-auto w-full lg:w-10/12 xl:w-8/12">
+             <!-- Main Image -->
+             <p><img style="display: block; border-radius: 25px; margin-left: auto; margin-right: auto;" src="{{ asset($aboutSection->main_image) }}" alt="" width="1450" height="761"></p>
+
+             <!-- Highlighted Text Poster -->
+             <p style="text-align: center;"><span class="highlight">{{ $aboutSection->highlighted_text_poster }}</span></p>
+
+             <!-- Main Title -->
+             <h1 style="text-align: center;">{{ $aboutSection->main_title }}</h1>
+
+             <!-- Main Content -->
+             <p class="leading" style="max-width: 80%; margin-left: auto; margin-right: auto; text-align: center;">
+                 {{ $aboutSection->main_content_intro }}
+                 <span style="color: rgb(89, 89, 89);">{{ $aboutSection->main_content_detail }}</span>
+             </p>
+
+             <hr>
+             <p>&nbsp;</p>
+
+             <!-- Additional Highlights -->
+             @foreach($aboutSection->additional_sections as $section)
+                 <p><span class="highlight">{{ $section['tag'] }}</span></p>
+                 <h3>{{ $section['title'] }}</h3>
+                 <p class="leading">{{ $section['content_main'] }}
+                     <span style="color: rgb(89, 89, 89);">{{ $section['content_detail'] }}</span>
+                 </p>
+                 @if (isset($section['paragraphs']))
+                     @foreach($section['paragraphs'] as $paragraph)
+                         <p>{{ $paragraph }}</p>
+                     @endforeach
+                 @endif
+             @endforeach
+
+             <p>&nbsp;</p>
+
+             <!-- Reference Links -->
+             <p style="text-align: center;">
+                <span class="info-box"> Still have a question?
+                   @foreach($aboutSection->references as $reference)
+                      <span style="color: rgb(8, 53, 248);">
+                         <a style="color: rgb(8, 53, 248);" href="{{ $reference['link'] }}">{{ $reference['text'] }}</a>
+                      </span>
+                   @endforeach
+                </span>
+             </p>
+
+             <hr>
+             <p>&nbsp;</p>
+
+             <!-- Icons Table -->
+             <table style="border-collapse: collapse; width: 100%; border-width: 0px; border-style: none;" border="1">
+                <colgroup>
+                   <col style="width: 20%;">
+                </colgroup>
+                <tbody>
+                   <tr style="text-align: center;">
+                      @foreach ($aboutSection->icons as $icon)
+                      <td style="border-width: 0px; text-align: center;"><img src="{{ asset($icon) }}" alt="" width="auto" height="auto"></td>
+                      @endforeach
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+    </div>
  </section>
+
 
 @endsection

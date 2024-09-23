@@ -24,6 +24,7 @@ class TruncateTablesSeeder extends Seeder
         // DB::table('service_details')->truncate();
         // DB::table('service_images')->truncate();
         // DB::table('template_sections')->truncate();
+        DB::table('about_sections')->truncate();
         // DB::table('templates')->truncate();
         // DB::table('blog_sections')->truncate();
         // DB::table('blog_posts')->truncate();
@@ -34,10 +35,11 @@ class TruncateTablesSeeder extends Seeder
         // DB::table('hub_headers')->truncate();
         // DB::table('digital_hub_features')->truncate();
         // DB::table('faq_sections')->truncate();
-        // DB::table('digital_solutions_sections')->truncate();
+        // DB::table('digital_solutions_section')->truncate();
+        // DB::table('digital_solutions_header')->truncate();
         // DB::table('banner_sections')->truncate();
         // DB::table('testimonials')->truncate();
-        DB::table('headers')->truncate();
+        // DB::table('headers')->truncate();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;'); // Enable foreign key checks
     }

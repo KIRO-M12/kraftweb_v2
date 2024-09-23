@@ -5,17 +5,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HowItWorksController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/features', [PageController::class, 'features'])->name('features');
 Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
-Route::get('/how-it-works', [PageController::class, 'howItWorks'])->name('how-it-works');
+Route::get('/how-it-works', [HowItWorksController::class, 'howItWorks'])->name('how-it-works');
 
 Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials');
 
