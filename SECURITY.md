@@ -9,10 +9,7 @@ Framework Compatibility & Optimizations
     jQuery: Inline style adjustments provide backward compatibility with legacy JavaScript, ensuring a unified handling across frameworks.
 
     Note: Styling and functional elements are optimized for each framework to maintain consistency and functionality inspired by best practices on [website name].
-## Supported Versions
-
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+## Supported Versions 
 
 | Version | Supported          |
 | ------- | ------------------ |
